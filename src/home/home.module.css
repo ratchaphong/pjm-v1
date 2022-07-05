@@ -1,0 +1,134 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fbe9e7;
+  font-family: "Roboto", sans-serif;
+}
+
+.container .box {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.container .box img {
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+  transition: 1s;
+}
+
+.container .box img:nth-child(2) {
+  transform: rotateY(180deg);
+}
+
+.container .box:hover img:nth-child(1) {
+  transform: rotateY(-180deg);
+}
+
+.container .box:hover img:nth-child(2) {
+  transform: rotateY(0deg);
+}
+
+.container .card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background-color: #fff;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.25);
+  transition: 1s;
+}
+
+.container .card:hover {
+  transform: translateX(50%);
+}
+
+.container .card .details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .card .details .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container .card .details .content h2 {
+  text-align: center;
+  font-weight: 700;
+  line-height: 1em;
+}
+
+.container .card .details .content h2 span {
+  color: #e21212;
+  font-size: 0.8em;
+}
+
+.container .card .details .content .social {
+  position: relative;
+  display: flex;
+  margin-top: 10px;
+}
+
+.container .card .details .content .social a {
+  width: 35px;
+  height: 35px;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+.container .card .details .content .social a:hover {
+  background-color: #f00;
+}
+
+.container .card .imgBox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transition: 1s;
+  background-color: #333;
+}
+
+.container .card:hover .imgBox {
+  transform: rotateY(-180deg);
+}
+
+.container .card .imgBox img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.container .card .imgBox img:nth-child(2) {
+  transform: rotateY(180deg);
+}
