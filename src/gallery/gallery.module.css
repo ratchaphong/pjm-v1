@@ -1,0 +1,126 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  font-family: "Oswald", sans-serif;
+}
+
+.fontTh {
+  font-family: "Kanit", sans-serif;
+}
+
+.imageGallery {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 250px;
+  grid-auto-flow: dense;
+  gap: 20px;
+}
+
+.imageGallery .imageBox {
+  position: relative;
+  background-color: #d7d7d8;
+  overflow: hidden;
+}
+
+.imageGallery .imageBox:nth-child(7n + 1) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.imageGallery .imageBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.imageGallery .imageBox .imgBlur {
+  filter: blur(8px);
+}
+
+.imageGallery .imageBox:hover img {
+  transform: scale(1.1);
+}
+
+.imageGallery .imageBox .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #fafafa80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+.imageGallery .imageBox:hover .overlay {
+  top: 24px;
+  right: 24px;
+  left: 24px;
+  bottom: 24px;
+  opacity: 1;
+}
+
+.imageGallery .imageBox .details {
+  text-align: center;
+}
+
+.imageGallery .imageBox .details .title {
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  top: -5px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.imageGallery .imageBox .details .category {
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+  bottom: -5px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.imageGallery .imageBox:hover .details .title {
+  top: 0px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s 0.2s ease;
+}
+
+.imageGallery .imageBox:hover .details .category {
+  bottom: 0px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s 0.2s ease;
+}
+
+.imageGallery .imageBox .details .title a {
+  color: #222222;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .imageGallery {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 250px;
+  }
+
+  .imageGallery .imageBox:nth-child(7n + 1) {
+    grid-column: unset;
+    grid-row: unset;
+  }
+}

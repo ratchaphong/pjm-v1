@@ -226,7 +226,7 @@ const Work = () => {
                   เพื่อพัฒนาผลงานอย่างเต็มประสิทธิภาพ
                 </>
               }
-              link="/"
+              link="/gallery"
             />
           </label>
           <label
@@ -255,7 +255,7 @@ const Work = () => {
                   ทำให้คุณพัฒนาได้อย่างต่อเนื่อง
                 </>
               }
-              link="/"
+              link="/gallery"
             />
           </label>
           <label
@@ -282,7 +282,7 @@ const Work = () => {
                   </span>
                 </>
               }
-              link="/"
+              link="/gallery"
             />
           </label>
         </div>
