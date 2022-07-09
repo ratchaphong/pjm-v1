@@ -1,0 +1,343 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  font-family: "Oswald", sans-serif;
+}
+
+.container header {
+  width: 100%;
+  padding: 32px 96px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container header > div:first-child {
+  opacity: 0;
+}
+
+.container header .signup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: not-allowed;
+}
+
+.container header .signup > div:first-child:hover,
+.container header .signup > div:last-child:hover {
+  color: #00529a;
+}
+
+.container header .signup > div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.container .main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 96px;
+}
+
+.container .main .banner {
+  position: relative;
+  width: 100%;
+  height: 250px;
+}
+
+.container .main .banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.8);
+}
+
+.container .main .banner .bannerText {
+  position: absolute;
+  background-color: #00000050;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 36px 120px;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #f1f1f1;
+  font-size: 36px;
+  text-transform: uppercase;
+}
+
+.container .main .banner .bannerText button {
+  width: 160px;
+  height: 48px;
+  padding: 0 24px;
+  color: #f1f1f1;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background-color: #00529a;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.container .main .banner .bannerText button:hover {
+  color: #f1f1f1;
+  background-color: #0d75d1;
+}
+
+.container .main .content {
+  padding: 36px 0;
+}
+
+.container .main .content h2 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.container .main .content > p {
+  width: 100%;
+  max-width: 768px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.container .main .content .underline {
+  width: 20%;
+  height: 4px;
+  background-color: #00529a;
+  margin: 24px auto 48px;
+}
+
+.container .main .content .questions {
+  width: 100%;
+  padding: 32px 48px;
+  background-color: #ccdceb;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.container .main .content .questions h2 {
+  margin: 0;
+}
+
+.container .main .content .questions .answer {
+  height: 36px;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.container .main .content .questions .answer b {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.container .main .content .questions .answer p {
+  transform: translateY(36px);
+  transition: all 0.7s ease;
+}
+
+.container .main .content .questions .answer:hover {
+  height: 200px;
+}
+
+.container .main .content .questions .answer:hover p {
+  transform: translateY(0);
+}
+
+.footer {
+  background: #393d43;
+  color: #f1f1f1;
+  padding: 64px 36px;
+}
+
+.footer .copyright {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-top: 1px solid #f1f1f1;
+  padding: 36px 16px 0;
+}
+
+.footer .copyright > div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 24px;
+}
+
+.content .benefits {
+  display: flex;
+  margin: 96px 0;
+  gap: 36px;
+}
+
+.content .benefits .card {
+  position: relative;
+  width: calc(100% / 3);
+  height: 160px;
+  background-color: #f1f1f1;
+  border-radius: 24px;
+  box-shadow: 0 36px 80px rgba(0, 0, 0, 0.15);
+  transition: 0.5s;
+}
+.content .benefits .card:hover {
+  height: 330px;
+}
+.content .benefits .card .imgBx {
+  position: absolute;
+  left: 50%;
+  top: -50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 150px;
+  background-color: #f1f1f1;
+  border-radius: 16px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+  transition: 0.5s;
+}
+.content .benefits .card:hover .imgBx {
+  width: 250px;
+  height: 250px;
+}
+.content .benefits .card .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale();
+}
+.content .benefits .card:hover .imgBx img {
+  filter: saturate(0.5);
+}
+
+.content .benefits .card .contentBx {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.content .benefits .card .contentBx .details {
+  padding: 36px;
+  text-align: center;
+  width: 100%;
+  transition: 0.5s;
+  transform: translateY(150px);
+}
+
+.content .benefits .card:hover .contentBx .details {
+  transform: translateY(0px);
+}
+
+.content .benefits .card .contentBx .details .name {
+  font-weight: bold;
+  color: #393d43;
+  background-color: #f1f1f150;
+}
+
+.content .benefits .card .contentBx .details .data {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 0;
+}
+
+.content .benefits .card .contentBx .details .data h3 {
+  font-size: 16px;
+  color: #393d43;
+  font-weight: bold;
+}
+
+.content .benefits .card .contentBx .details .data h3 span {
+  font-size: 12px;
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+.content .benefits .card .contentBx .details .actionBtn {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.card .contentBx .details .actionBtn button {
+  padding: 16px 32px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #00529a;
+  color: #f1f1f1;
+  cursor: pointer;
+}
+
+.card .contentBx .details .actionBtn button:nth-child(2) {
+  border: 1px solid #393d43;
+  color: #393d43;
+  background-color: #f1f1f1;
+}
+
+@media (max-width: 1024px) {
+  .content .benefits .card .contentBx .details {
+    transform: translateY(200px);
+  }
+  .content .benefits .card .contentBx .details {
+    padding: 16px;
+  }
+
+  .content .benefits .card .contentBx .details .actionBtn {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container header {
+    padding: 16px 36px;
+  }
+  .container .main {
+    padding: 0px 36px;
+  }
+  .container .main .content > p {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .container .main .banner .bannerText {
+    text-align: center;
+    margin: 36px;
+  }
+  .footer {
+    padding: 36px;
+  }
+  .footer .copyright {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .content .benefits {
+    flex-direction: column;
+    gap: 96px;
+  }
+  .content .benefits .card {
+    width: 100%;
+  }
+}

@@ -8,6 +8,7 @@ import NotFound from "./notfound";
 import Gallery from "./gallery";
 import KfcTemplate from "./kfc";
 import AddTemplate from "./add";
+import AgentTemplate from "./agent";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="service" element={<Service />} /> */}
           <Route path="add" element={<AddTemplate />} />
           <Route path="kfc" element={<KfcTemplate />} />
+          <Route path="agent" element={<AgentTemplate />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
