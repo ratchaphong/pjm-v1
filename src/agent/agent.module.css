@@ -179,6 +179,7 @@
 
 .content .benefits {
   display: flex;
+  justify-content: center;
   margin: 96px 0;
   gap: 36px;
 }
@@ -186,6 +187,7 @@
 .content .benefits .card {
   position: relative;
   width: calc(100% / 3);
+  max-width: 350px;
   height: 160px;
   background-color: #f1f1f1;
   border-radius: 24px;

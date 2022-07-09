@@ -46,6 +46,12 @@ const Gallery = () => {
         />
         <ImageBox
           img={bbom}
+          title="เว็บหลายหน้า ค่ายฟ้า"
+          content="website"
+          link={"/example/agent"}
+        />
+        <ImageBox
+          img={bbom}
           title="เครื่องแยกน็อตจากการประมวลผลภาพ"
           content="arduino"
         />
