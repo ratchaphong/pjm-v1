@@ -39,9 +39,9 @@ const Container = styled.section`
   .container .main-card .cards {
     width: calc(100% / 2 - 8px);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
-    margin: 0 16px;
+    gap: 24px;
   }
   .container .main-card .cards .card {
     width: calc(100% / 3 - 16px);
@@ -82,15 +82,6 @@ const Container = styled.section`
     border-radius: 50%;
     object-fit: cover;
   }
-  /* .container .card .content .name {
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    transition: color 0.3s ease-in-out;
-  } */
-  /* .container .cards .card:hover .name {
-    color: #f6c90e;
-  } */
   .container .cards .card .name {
     font-size: 20px;
     font-weight: bold;
@@ -111,7 +102,6 @@ const Container = styled.section`
   .container .cards .card:hover .name {
     background-position: 0 100%;
   }
-
   .container .card .content .name span {
     display: none;
     @media (max-width: 1024px) {
@@ -125,7 +115,6 @@ const Container = styled.section`
   .container .card .content .media-icons {
     display: flex;
   }
-
   .container .card .content .media-icons a {
     text-align: center;
     line-height: 33px;
@@ -136,7 +125,6 @@ const Container = styled.section`
     color: #fff;
     border-radius: 50%;
     border: 2px solid transparent;
-    /* background: #ff676d; */
     background: #ad974f;
     transition: all 0.3s ease;
   }
@@ -153,10 +141,8 @@ const Container = styled.section`
     background: #f00;
   }
   .container .card .content .media-icons a:hover {
-    /* color: #ff676d; */
     color: #ad974f;
     background-color: #fff;
-    /* border-color: #ff676d; */
     border-color: #ad974f;
   }
   .container .card .content .media-icons .fa:hover {
@@ -190,25 +176,26 @@ const Container = styled.section`
     width: 16px;
     border-radius: 24px;
     background: #fff;
-    /* background: #ad974f; */
     margin: 0 4px;
     cursor: pointer;
     transition: all 0.5s ease;
   }
   .button label.active {
-    width: 35px;
+    width: 36px;
   }
   #one:checked ~ .button .one {
-    width: 35px;
+    width: 36px;
+    background-color: #f6c90e;
   }
   #one:checked ~ .button .two {
-    width: 15px;
+    width: 16px;
   }
   #two:checked ~ .button .one {
-    width: 15px;
+    width: 16px;
   }
   #two:checked ~ .button .two {
-    width: 35px;
+    width: 36px;
+    background-color: #f6c90e;
   }
   input[type="radio"] {
     display: none;
@@ -225,7 +212,6 @@ const Container = styled.section`
   }
   @media (max-width: 600px) {
     .container .main-card .cards .card {
-      /* margin: 20px 0 10px 0; */
       width: 100%;
       height: fit-content;
     }
@@ -268,7 +254,7 @@ const Team = () => {
     <Container id="team">
       <h2 className="title">ทีมงาน</h2>
       <div class="container">
-        <input type="radio" name="dot" id="one" />
+        <input type="radio" name="dot" id="one" defaultChecked />
         <input type="radio" name="dot" id="two" />
         <div class="main-card">
           <div class="cards">
@@ -325,9 +311,9 @@ const Team = () => {
             />
           </div>
         </div>
-        <div class="button">
-          <label for="one" class=" active one"></label>
-          <label for="two" class="two"></label>
+        <div className="button">
+          <label htmlFor="one" className="active one"></label>
+          <label htmlFor="two" className="two"></label>
         </div>
       </div>
     </Container>

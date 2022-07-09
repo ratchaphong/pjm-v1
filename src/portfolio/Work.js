@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
-const delay = 3;
+const delay = 5;
 
 const Container = styled.section`
   font-family: "Kanit", sans-serif;
@@ -10,10 +10,16 @@ const Container = styled.section`
   align-items: center;
   margin-bottom: 64px;
   color: #f1f1f1;
-  > h2 {
+  > div:first-of-type h2 {
     margin-bottom: 16px;
     letter-spacing: 1px;
     font-size: 32px;
+  }
+  .typewriter h2 {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid #f6c90e;
+    animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
   }
   .content {
     width: 80%;
@@ -28,6 +34,23 @@ const Container = styled.section`
     height: 4px;
     margin: 24px auto 64px;
     background-color: #f6c90e;
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: #f6c90e;
+    }
   }
 `;
 
@@ -192,7 +215,9 @@ const Work = () => {
 
   return (
     <Container id="works">
-      <h2 className="title">ผลงาน</h2>
+      <div className="">
+        <h2>ผลงาน</h2>
+      </div>
       <p className="content">ตัวอย่างผลงานที่ร่วมพัฒนากับทีมงานที่ผ่านมา</p>
       <div className="underline" />
       <Carousel className="container">

@@ -19,7 +19,6 @@ const Container = styled.section`
   flex-direction: column;
   align-items: center;
   margin-bottom: 64px;
-  /* color: #231f20; */
   color: #f1f1f1;
   > h2 {
     margin-bottom: 16px;
@@ -46,13 +45,7 @@ const Container = styled.section`
     display: flex;
     flex-direction: column;
     padding: 16px;
-    /* border: 1px solid #f1f1f1; */
-    /* border: 1px solid #eaeaea; */
-    /* background-color: #eaeaea; */
-    /* border: 1px solid #f4f4f3; */
-    /* background-color: #f4f4f3; */
     border: 4px solid #f1f1f1;
-    /* box-shadow: 0px 0px 18px 0px rgb(0 0 0 / 20%); */
     border-radius: 4px;
     box-sizing: border-box;
     margin-bottom: 24px;
@@ -70,7 +63,6 @@ const Container = styled.section`
   }
   .feature .item .header .label {
     font-weight: bold;
-    /* color: #02254b; */
     font-size: 24px;
     letter-spacing: 1px;
   }
@@ -130,12 +122,12 @@ const Container = styled.section`
   .motto {
     padding: 64px 32px;
     width: 100%;
-    /* background-color: #f1f1f1; */
     border: 4px solid #f1f1f1;
     border-radius: 4px;
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
+    column-gap: 36px;
     margin-bottom: 64px;
     @media (max-width: 768px) {
       flex-direction: column;
@@ -143,10 +135,8 @@ const Container = styled.section`
   }
   .motto .label {
     width: 68%;
-    padding-right: 36px;
     @media (max-width: 768px) {
       width: 100%;
-      padding-right: unset;
       margin-bottom: 36px;
     }
     > div {
@@ -200,9 +190,11 @@ const About = () => {
       <div className="motto">
         <div className="label">
           <h2>
-            ทำความรู้จักกับ พี่บอม
-            <br />
-            อดีตนักเรียนทุน<span>กิจกรรมดีเด่น</span>
+            ทำความรู้จักกับ PROJECTMAN
+            <span>
+              <br />
+              นำทีมโดย อดีตนักเรียนทุนกิจกรรมดีเด่น
+            </span>
           </h2>
           <div>
             <p>

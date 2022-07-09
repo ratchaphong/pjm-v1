@@ -3,11 +3,14 @@ import bbom from "../assets/images/ttherapat.jpg";
 
 const Container = styled.section`
   font-family: "Kanit", sans-serif;
-  padding-top: 3%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #000000;
+  color: #f1f1f1;
+  width: 100%;
+  height: 100vh;
+  gap: 36px;
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -24,34 +27,74 @@ const Container = styled.section`
   }
   .textImage {
     width: 50%;
-    margin-left: 4%;
     display: flex;
     flex-direction: column;
     color: #f1f1f1;
     @media (max-width: 768px) {
       width: 80%;
-      margin-left: 0;
-      margin-bottom: 3%;
-      margin-top: 3%;
     }
   }
-  .textImage .quotes_1024 {
-    letter-spacing: 1px;
-    text-align: left;
-    font-size: 40px;
+
+  .wrapper {
+    font-size: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     @media (max-width: 1024px) {
-      font-size: 32px;
+      font-size: 24px;
     }
     @media (max-width: 768px) {
-      display: none;
+      font-size: 12px;
     }
   }
-  .textImage .quotes_768 {
-    display: none;
-    font-size: 24px;
-    text-align: center;
+  .wrapper .static {
+    color: #f1f1f1;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 16px;
     @media (max-width: 768px) {
-      display: block;
+      font-size: 8px;
+    }
+  }
+  .wrapper .static span {
+    animation: blink-space 0.5s infinite;
+  }
+  .wrapper .dynamic {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .wrapper .dynamic > div {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid;
+    letter-spacing: 1.5px;
+    animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: #f6c90e;
+    }
+  }
+  @keyframes blink-space {
+    from,
+    to {
+      color: transparent;
+    }
+    50% {
+      color: #f1f1f1;
     }
   }
 `;
@@ -62,21 +105,17 @@ const Banner = () => {
       <div className="image">
         <img src={bbom} className="background" alt="" />
       </div>
-      <div className="textImage">
-        <p className="quotes_1024">
-          ผู้ให้บริการรับทำโปรเจคคอมพิวเตอร์
-          <br />
-          เว็บไซต์ และโครงงานนักศึกษา
-          <br />
-          จบครบในที่เดียว
-        </p>
-        <p className="quotes_768">
-          ผู้ให้บริการรับทำโปรเจค
-          <br />
-          เว็บไซต์และโครงงานนักศึกษา
-          <br />
-          จบครบในที่เดียว
-        </p>
+      <div className="wrapper">
+        <section className="static">
+          C : \USERS\PROJECMAN {`>`} type script.txt<span>_</span>
+        </section>
+        <section className="dynamic">
+          <div>ผู้ให้บริการรับทำโปรเจคคอมพิวเตอร์</div>
+          <div>Website (Landding Page, CMS, E-Commerce)</div>
+          <div>Microcontroller (Arduino, NodeMCU, Raspberry Pi)</div>
+          <div>iOS และ Android Mobile Application</div>
+          <div>จบครบในที่เดียว</div>
+        </section>
       </div>
     </Container>
   );

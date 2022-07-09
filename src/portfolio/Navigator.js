@@ -24,7 +24,8 @@ const Navbar = styled.div`
   }
   .icon {
     align-self: center;
-    opacity: ${(props) => (props.isSticky ? "1" : "0")};
+    /* opacity: ${(props) => (props.isSticky ? "1" : "0")}; */
+    opacity: 0;
     transition: opacity 0.3s;
     font-size: 20px;
     transition: all 0.3s;
@@ -121,7 +122,7 @@ const Navigator = () => {
 
   useEffect(() => {
     function tracking() {
-      setIsSticky(window.scrollY > 200);
+      setIsSticky(window.scrollY > 600);
     }
     window.addEventListener("scroll", tracking);
     return () => window.removeEventListener("scroll", tracking);

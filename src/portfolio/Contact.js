@@ -92,8 +92,6 @@ const Container = styled.section`
     button {
       font-weight: bold;
       border: none;
-      /* color: #f1f1f1; */
-      /* background-color: #000; */
       background-color: #f6c90e;
       margin: 0 0 32px;
       height: 48px;
@@ -101,11 +99,6 @@ const Container = styled.section`
       display: flex;
       align-items: center;
       justify-content: center;
-      &:hover {
-        cursor: pointer;
-        color: #000;
-        background-color: #ccc;
-      }
       svg {
         font-size: 24px;
       }
@@ -113,6 +106,20 @@ const Container = styled.section`
         text-transform: uppercase;
         margin-left: 12px;
       }
+    }
+    button:hover {
+      cursor: pointer;
+      color: #000;
+      background-color: #ccc;
+    }
+    button:disabled {
+      cursor: not-allowed;
+      background-color: #f6c90e;
+      color: #00000050;
+    }
+    button:disabled:hover {
+      background-color: #f6c90e;
+      color: #00000050;
     }
   }
 `;
@@ -160,7 +167,7 @@ const Banner = () => {
             <input placeholder="Name" />
             <input placeholder="Email" />
             <input placeholder="Message" />
-            <button type="button">
+            <button type="button" disabled>
               <FontAwesomeIcon icon={faPaperPlane} />
               <label>Send Message</label>
             </button>
