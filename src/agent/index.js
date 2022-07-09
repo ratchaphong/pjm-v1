@@ -4,20 +4,9 @@ import bbom2 from "../assets/images/bbom.jpg";
 import ratcha from "../assets/images/rratcha.jpg";
 import tharin from "../assets/images/ttharin.jpg";
 
-import cx from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faGithub,
-  faInstagram,
-  faLinkedin,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 const Card = ({ img, name }) => {
