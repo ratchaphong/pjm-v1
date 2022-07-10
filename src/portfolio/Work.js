@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const delay = 5;
@@ -188,14 +189,17 @@ const Carousel = styled.div`
   }
 `;
 
-const Notice = ({ header, content, link }) => {
+const Notice = ({ header, content, link, catalogue = "" }) => {
   return (
     <div className="notice">
       <h1>{header}</h1>
       <p className="line-clamp">{content}</p>
-      <a href={link}>
+      {/* <a href={link}>
         <span>รายละเอียด</span>เพิ่มเติม
-      </a>
+      </a> */}
+      <Link to={link} state={{ catalogue }}>
+        <span>รายละเอียด</span>เพิ่มเติม
+      </Link>
     </div>
   );
 };
@@ -241,17 +245,19 @@ const Work = () => {
             <Notice
               header={
                 <>
-                  <span>เริ่มต้น</span> Arduino <span>ระเบิดไอเดีย Maker</span>
+                  รับทำเว็บไซต์
+                  <span>รองรับทั้งมือถือและแท็บเล็ต</span>
                 </>
               }
               content={
                 <>
-                  เรียนรู้ และเข้าใจในโมดูลเซ็นเซอร์
+                  รับทำเว็บไซต์ทุกรูปแบบ ออกแบบพัฒนาระบบ
                   <br />
-                  เพื่อพัฒนาผลงานอย่างเต็มประสิทธิภาพ
+                  รองรับการใช้งานทุกรูปแบบ
                 </>
               }
               link="/gallery"
+              catalogue="website"
             />
           </label>
           <label
@@ -270,17 +276,18 @@ const Work = () => {
             <Notice
               header={
                 <>
-                  <span>เส้นทางเข้าสู่</span>นักพัฒนาขั้นสุด
+                  <span>รับทำโปรเจค เขียนโปรแกรม</span> ไมโครคอลโทรลเลอร์
                 </>
               }
               content={
                 <>
-                  หลักสูตรพัฒนาสำหรับ developer
+                  Arduino, Raspberry Pi, ESP8266, ESP32
                   <br />
-                  ทำให้คุณพัฒนาได้อย่างต่อเนื่อง
+                  Python (Image Processing)
                 </>
               }
               link="/gallery"
+              catalogue="arduino"
             />
           </label>
           <label
@@ -297,17 +304,20 @@ const Work = () => {
               alt="song"
             />
             <Notice
-              header={<>ครบทุกพื้นฐานภาษา</>}
-              content={
+              header={
                 <>
-                  ทำให้คุณรู้สึกสนุก และเข้าใจการเขียนเชิงโปรแกรม
-                  <span>
-                    <br />
-                    ภายในหนึ่งเดือน
-                  </span>
+                  รับเขียน Mobile application
+                  <span> ทั้ง iOS และ Android</span>
                 </>
               }
-              link="/gallery"
+              content={
+                <>
+                  รับทำโปรเจค Cross-Platform Mobile App
+                  <br />
+                  ด้วย React-Native, Flutter, Firebase
+                </>
+              }
+              link="/404"
             />
           </label>
         </div>
