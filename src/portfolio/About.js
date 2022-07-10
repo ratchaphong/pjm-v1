@@ -12,6 +12,7 @@ import {
   faDesktop,
   faDollarSign,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Container = styled.section`
   font-family: "Kanit", sans-serif;
@@ -79,6 +80,20 @@ const Container = styled.section`
     margin-top: 16px;
     font-size: 16px;
     border: none;
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+  .feature .item .greeting:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+  .feature .item .greeting:disabled {
+    background-color: #f6c90e;
+    color: #000000;
+    cursor: not-allowed;
+  }
+  .feature .item .greeting:disabled:hover {
+    opacity: 0.8;
   }
   .agent {
     width: 100%;
@@ -246,7 +261,7 @@ const About = () => {
             <br />
             เรามีความถนัดในการพัฒนาระบบด้วย MERN Stack รวมทั้งภาษาอื่นๆ
           </p>
-          <button type="button" className="greeting">
+          <button type="button" className="greeting" disabled>
             ฉันคือใคร
           </button>
         </div>
@@ -261,9 +276,11 @@ const About = () => {
             ไม่มีค่าบริการรายปี
             ยกเว้นแต่ลูกค้าต้องการให้เราดูแลเว็บไซต์เป็นพิเศษ
           </p>
-          <button type="button" className="greeting">
-            เราทำอะไรบ้าง
-          </button>
+          <Link to={"/gallery"}>
+            <button type="button" className="greeting">
+              เราทำอะไรบ้าง
+            </button>
+          </Link>
         </div>
         <div className="item">
           <div className="header">
