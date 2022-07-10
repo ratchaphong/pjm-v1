@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Title from "./title";
 // import Home from "./home";
 // import About from "./about";
@@ -16,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Portfolio />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/notfound" element={<NotFound />} />
         <Route path="example">
           <Route index={true} element={<Title />} />
           {/* <Route path="home" element={<Home />} />
@@ -25,7 +26,7 @@ function App() {
           <Route path="kfc" element={<KfcTemplate />} />
           <Route path="agent" element={<AgentTemplate />} />
         </Route>
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<Navigate to="/notfound" replace />} />
       </Routes>
     </BrowserRouter>
   );
