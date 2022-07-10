@@ -107,11 +107,11 @@ const Banner = () => {
       </div>
       <div className="wrapper">
         <section className="static">
-          C : \USERS\PROJECMAN {`>`} type script.txt<span>_</span>
+          C : \USERS\PROJECTMAN {`>`} type script.txt<span>_</span>
         </section>
         <section className="dynamic">
           <div>ผู้ให้บริการรับทำโปรเจคคอมพิวเตอร์</div>
-          <div>Website (Landding Page, CMS, E-Commerce)</div>
+          <div>Website (Landing Page, CMS, E-Commerce)</div>
           <div>Microcontroller (Arduino, NodeMCU, Raspberry Pi)</div>
           <div>iOS และ Android Mobile Application</div>
           <div>จบครบในที่เดียว</div>
