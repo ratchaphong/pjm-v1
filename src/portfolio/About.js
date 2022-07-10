@@ -276,7 +276,7 @@ const About = () => {
             ไม่มีค่าบริการรายปี
             ยกเว้นแต่ลูกค้าต้องการให้เราดูแลเว็บไซต์เป็นพิเศษ
           </p>
-          <Link to={"/gallery"}>
+          <Link to={"/gallery"} state={{ catalogue: "website" }}>
             <button type="button" className="greeting">
               เราทำอะไรบ้าง
             </button>
