@@ -5,9 +5,11 @@ import project1 from "../assets/images/1.JPG";
 import project2 from "../assets/images/2.JPG";
 import project3 from "../assets/images/3.JPG";
 import project4 from "../assets/images/4.JPG";
+import project5 from "../assets/images/5.JPG";
 import project6 from "../assets/images/6.JPG";
 import project7 from "../assets/images/7.JPG";
 import project8 from "../assets/images/8.JPG";
+import project9 from "../assets/images/9.JPG";
 import project10 from "../assets/images/10.JPG";
 import project11 from "../assets/images/11.JPG";
 import project12 from "../assets/images/12.JPG";
@@ -110,7 +112,7 @@ const Gallery = () => {
             />
             <ImageBox
               img={project1}
-              title="เครื่องจ่ายยาและแจ้งเตือนผ่านไลน์"
+              title="เครื่องจ่ายยาและแจ้งเตือนผ่าน Line Notify"
               content="arduino"
             />
             <ImageBox
@@ -121,6 +123,16 @@ const Gallery = () => {
             <ImageBox
               img={project7}
               title="วิเคราะห์ความผิดปกติใบพืชจากสี"
+              content="arduino"
+            />
+            <ImageBox
+              img={project5}
+              title="เครื่องควบคุมมอเตอร์เพื่อสั่งตัดถ่านตามจำนวน"
+              content="arduino"
+            />
+            <ImageBox
+              img={project9}
+              title="ระบบควบคุมโรงเรือนผ่านมือถือ"
               content="arduino"
             />
           </>

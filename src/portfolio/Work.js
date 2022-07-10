@@ -251,9 +251,11 @@ const Work = () => {
               }
               content={
                 <>
-                  รับทำเว็บไซต์ทุกรูปแบบ ออกแบบพัฒนาระบบ
+                  รับทำเว็บไซต์ทุกรูปแบบ ด้วย
                   <br />
-                  รองรับการใช้งานทุกรูปแบบ
+                  React, Node js, MongoDB
+                  <br />
+                  MySQL, Firebase
                 </>
               }
               link="/gallery"
@@ -276,12 +278,14 @@ const Work = () => {
             <Notice
               header={
                 <>
-                  <span>รับทำโปรเจค เขียนโปรแกรม</span> ไมโครคอลโทรลเลอร์
+                  <span>รับเขียนโปรแกรม </span>ไมโครคอลโทรลเลอร์
                 </>
               }
               content={
                 <>
-                  Arduino, Raspberry Pi, ESP8266, ESP32
+                  Arduino, Raspberry Pi
+                  <br />
+                  ESP8266, Netpie, Line Notify
                   <br />
                   Python (Image Processing)
                 </>
@@ -306,15 +310,17 @@ const Work = () => {
             <Notice
               header={
                 <>
-                  รับเขียน Mobile application
+                  <span>รับเขียน </span>Mobile Application
                   <span> ทั้ง iOS และ Android</span>
                 </>
               }
               content={
                 <>
-                  รับทำโปรเจค Cross-Platform Mobile App
+                  รับทำโปรเจค Cross-Platform
                   <br />
-                  ด้วย React-Native, Flutter, Firebase
+                  Mobile App ด้วย React Native
+                  <br />
+                  Flutter
                 </>
               }
               link="/404"

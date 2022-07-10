@@ -220,15 +220,15 @@ const Container = styled.section`
 
 const Card = ({ img, name, job, fa = "#", tw = "#", ins = "#", yu = "#" }) => {
   return (
-    <div class="card">
+    <div className="card">
       <div className="overlay"></div>
-      <div class="content">
-        <div class="img">
+      <div className="content">
+        <div className="img">
           <img src={img} alt="" />
         </div>
-        <div class="details">
-          <div class="name">{name}</div>
-          <div class="job">{job}</div>
+        <div className="details">
+          <div className="name">{name}</div>
+          <div className="job">{job}</div>
         </div>
         <div className="media-icons">
           <a className="fa" href={fa}>
@@ -253,11 +253,11 @@ const Team = () => {
   return (
     <Container id="team">
       <h2 className="title">ทีมงาน</h2>
-      <div class="container">
+      <div className="container">
         <input type="radio" name="dot" id="one" defaultChecked />
         <input type="radio" name="dot" id="two" />
-        <div class="main-card">
-          <div class="cards">
+        <div className="main-card">
+          <div className="cards">
             <Card
               img={bbom2}
               name="ธีรภัทร์ น้ำเพชร"
@@ -290,7 +290,7 @@ const Team = () => {
               yu="#"
             />
           </div>
-          <div class="cards">
+          <div className="cards">
             <Card
               img={bbas}
               name="มูฮาหมัด ชัยวุฒิ"
