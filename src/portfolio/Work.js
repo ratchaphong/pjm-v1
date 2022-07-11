@@ -16,12 +16,6 @@ const Container = styled.section`
     letter-spacing: 1px;
     font-size: 32px;
   }
-  .typewriter h2 {
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 4px solid #f6c90e;
-    animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
-  }
   .content {
     width: 80%;
     text-align: center;
@@ -36,33 +30,14 @@ const Container = styled.section`
     margin: 24px auto 64px;
     background-color: #f6c90e;
   }
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-  @keyframes blink-caret {
-    from,
-    to {
-      border-color: transparent;
-    }
-    50% {
-      border-color: #f6c90e;
-    }
-  }
 `;
 
 const Carousel = styled.div`
   width: 100%;
   height: 100vh;
-
   input[type="radio"] {
     display: none;
   }
-
   &.container {
     max-width: 800px;
     max-height: 400px;
@@ -75,7 +50,6 @@ const Carousel = styled.div`
       max-height: 200px;
     }
   }
-
   .card {
     position: absolute;
     width: 60%;
@@ -89,20 +63,17 @@ const Carousel = styled.div`
       width: 60%;
     }
   }
-
   .cards {
     position: relative;
     width: 100%;
     height: 100%;
   }
-
   img {
     width: 100%;
     height: 100%;
     border-radius: 10px;
     object-fit: cover;
   }
-
   #item-1:checked ~ .cards #song-3,
   #item-2:checked ~ .cards #song-1,
   #item-3:checked ~ .cards #song-2 {
@@ -113,7 +84,6 @@ const Carousel = styled.div`
       transform: translatex(-30%) scale(0.8);
     }
   }
-
   #item-1:checked ~ .cards #song-2,
   #item-2:checked ~ .cards #song-3,
   #item-3:checked ~ .cards #song-1 {
@@ -124,7 +94,6 @@ const Carousel = styled.div`
       transform: translatex(30%) scale(0.8);
     }
   }
-
   #item-1:checked ~ .cards #song-1,
   #item-2:checked ~ .cards #song-2,
   #item-3:checked ~ .cards #song-3 {
@@ -231,7 +200,7 @@ const Work = () => {
         <div className="cards">
           <label
             className="card"
-            for="item-1"
+            htmlFor="item-1"
             id="song-1"
             onClick={() => {
               setPage(1);
@@ -264,7 +233,7 @@ const Work = () => {
           </label>
           <label
             className="card"
-            for="item-2"
+            htmlFor="item-2"
             id="song-2"
             onClick={() => {
               setPage(2);
@@ -296,7 +265,7 @@ const Work = () => {
           </label>
           <label
             className="card"
-            for="item-3"
+            htmlFor="item-3"
             id="song-3"
             onClick={() => {
               setPage(3);
