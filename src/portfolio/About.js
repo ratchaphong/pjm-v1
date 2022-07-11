@@ -43,8 +43,10 @@ const Container = styled.section`
   }
   .feature .item {
     width: 30%;
+    height: 240px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding: 16px;
     border: 4px solid #f1f1f1;
     border-radius: 4px;
@@ -82,6 +84,10 @@ const Container = styled.section`
     border: none;
     opacity: 1;
     transition: opacity 0.3s;
+  }
+  .feature .item a {
+    color: #000000;
+    text-decoration: none;
   }
   .feature .item .greeting:hover {
     opacity: 0.8;
@@ -254,14 +260,16 @@ const About = () => {
               <FontAwesomeIcon icon={faDesktop} color={"#F6C90E"} />
             </div>
           </div>
-          <p className="">
+          <p className="line-clamp">
             ด้วยประสบการณ์ทำงานในสายงานกว่า 5 ปี
             <br />
             เรามีความถนัดในการพัฒนาระบบด้วย MERN Stack รวมทั้งภาษาอื่นๆ
           </p>
-          <button type="button" className="greeting" disabled>
-            ฉันคือใคร
-          </button>
+          <Link to="/comingsoon">
+            <button type="button" className="greeting">
+              ฉันคือใคร
+            </button>
+          </Link>
         </div>
         <div className="item">
           <div className="header">

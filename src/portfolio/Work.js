@@ -292,7 +292,7 @@ const Work = () => {
                   Flutter
                 </>
               }
-              link="/404"
+              link="/notfound"
             />
           </label>
         </div>

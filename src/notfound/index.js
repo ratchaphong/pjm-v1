@@ -34,7 +34,7 @@ const flyMobile = keyframes`
     left: -200%;
   }
   to {
-    left: 10%;
+    left: 50%;
   }
 `;
 
@@ -56,8 +56,10 @@ const Image = styled.div`
     height: 250px;
   }
   @media (max-width: 768px) {
-    top: 20%;
-    left: 10%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
     animation: ${flyMobile} 2s linear 0s 1 normal;
   }
 `;
@@ -80,6 +82,7 @@ const Background = styled.div`
 `;
 
 const ContainerText = styled.div`
+  position: absolute;
   z-index: 5;
   display: flex;
   justify-content: center;
@@ -152,7 +155,11 @@ const NotFound = () => {
     const parallax = (e, target, offset) => {
       var x = e.clientX / offset;
       var y = e.clientY / offset;
-      target.style.transform = `translateX(${x}px) translateY(${y}px)`;
+      if (target.id === "ricardo" && window.innerWidth > 768) {
+        target.style.transform = `translateX(${x}px) translateY(${y}px)`;
+      } else {
+        target.style.transform = `translateX(${x}px) translateY(${y}px)`;
+      }
     };
 
     setTimeout(() => {
@@ -161,7 +168,6 @@ const NotFound = () => {
         parallax(e, text, 500);
       });
     }, 2000);
-
     return () => window.removeEventListener("mousemove", parallax);
   }, []);
 
