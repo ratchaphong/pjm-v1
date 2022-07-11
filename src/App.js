@@ -5,6 +5,7 @@ import Title from "./title";
 // import Service from "./service";
 import Portfolio from "./portfolio";
 import NotFound from "./notfound";
+import ComingSoon from "./comingsoon";
 import Gallery from "./gallery";
 import KfcTemplate from "./kfc";
 import AddTemplate from "./add";
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Portfolio />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/comingsoon" element={<ComingSoon />} />
         <Route path="/notfound" element={<NotFound />} />
         <Route path="example">
           <Route index={true} element={<Title />} />
