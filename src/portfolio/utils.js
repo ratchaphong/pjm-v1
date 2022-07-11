@@ -8,5 +8,17 @@ export function withSEO(title, description, keywords) {
     if (tag.name === "keywords") {
       tag.content = keywords;
     }
+    if (tag.getAttribute("property") === "og:title") {
+      tag.content = title;
+    }
+    if (tag.getAttribute("property") === "og:description") {
+      tag.content = description;
+    }
+    if (tag.name === "twitter:title") {
+      tag.content = title;
+    }
+    if (tag.name === "twitter:description") {
+      tag.content = description;
+    }
   });
 }
