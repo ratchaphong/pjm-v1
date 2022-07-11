@@ -165,7 +165,6 @@ const Container = styled.section`
       }
     }
     > div section b {
-      /* color: #02254b; */
       color: #f6c90e;
       letter-spacing: 1px;
     }
@@ -178,7 +177,6 @@ const Container = styled.section`
     margin-bottom: 16px;
     font-size: 32px;
     letter-spacing: 2px;
-    /* color: #02254b; */
     color: #f6c90e;
     @media (max-width: 1024px) {
       > span {

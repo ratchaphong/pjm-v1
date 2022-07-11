@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import styled from "styled-components";
 import Navigator from "./Navigator";
 import Banner from "./Banner";
@@ -6,6 +7,7 @@ import Team from "./Team";
 import Work from "./Work";
 import Contact from "./Contact";
 import Footer from "./Footer";
+import { withSEO } from "./utils";
 
 const Container = styled.div`
   width: 100%;
@@ -29,6 +31,13 @@ const Body = styled.section`
 `;
 
 const Portfolio = () => {
+  useEffect(() => {
+    withSEO(
+      "PROJECTMAN - 2023 Developer",
+      "ผู้ให้บริการรับทำ Website, Microcontroller และ Mobile Application จบครบในที่เดียว",
+      "รับทำโปรเจค, รับเขียนโปรแกรม, รับเขียน Website, รับเขียนโปรแกรม Microcontroller, รับเขียน Mobile Application Cross Platform"
+    );
+  }, []);
   return (
     <Container>
       <Navigator />

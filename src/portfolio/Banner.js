@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import bbom from "../assets/images/ttherapat.jpg";
 
@@ -34,16 +35,19 @@ const Container = styled.section`
       width: 80%;
     }
   }
-
   .wrapper {
+    width: 100%;
+    max-width: 768px;
     font-size: 32px;
     display: flex;
     flex-direction: column;
     gap: 16px;
     @media (max-width: 1024px) {
+      max-width: 600px;
       font-size: 24px;
     }
     @media (max-width: 768px) {
+      max-width: 300px;
       font-size: 12px;
     }
   }
@@ -60,11 +64,10 @@ const Container = styled.section`
     animation: blink-space 0.5s infinite;
   }
   .wrapper .dynamic {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    width: fit-content;
   }
   .wrapper .dynamic > div {
+    width: fit-content;
     overflow: hidden;
     white-space: nowrap;
     border-right: 4px solid;
@@ -100,6 +103,26 @@ const Container = styled.section`
 `;
 
 const Banner = () => {
+  const [index, setIndex] = useState(0);
+  const timeoutRef = useRef(null);
+
+  function resetTimeout() {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  }
+
+  useEffect(() => {
+    resetTimeout();
+    timeoutRef.current = setTimeout(
+      () => setIndex((prevIndex) => (prevIndex === 5 - 1 ? 0 : prevIndex + 1)),
+      5000
+    );
+    return () => {
+      resetTimeout();
+    };
+  }, [index]);
+
   return (
     <Container id="home">
       <div className="image">
@@ -110,11 +133,13 @@ const Banner = () => {
           C : \USERS\PROJECTMAN {`>`} type script.txt<span>_</span>
         </section>
         <section className="dynamic">
-          <div>ผู้ให้บริการรับทำโปรเจคคอมพิวเตอร์</div>
-          <div>Website (Landing Page, CMS, E-Commerce)</div>
-          <div>Microcontroller (Arduino, NodeMCU, Raspberry Pi)</div>
-          <div>iOS และ Android Mobile Application</div>
-          <div>จบครบในที่เดียว</div>
+          {index === 0 && <div>ผู้ให้บริการรับทำโปรเจคคอมพิวเตอร์</div>}
+          {index === 1 && <div>Website (Landing Page, CMS, E-Commerce)</div>}
+          {index === 2 && (
+            <div>Microcontroller (Arduino, NodeMCU, Raspberry Pi)</div>
+          )}
+          {index === 3 && <div>iOS และ Android Mobile Application</div>}
+          {index === 4 && <div>จบครบในที่เดียว</div>}
         </section>
       </div>
     </Container>
