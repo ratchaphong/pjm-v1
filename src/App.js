@@ -1,37 +1,25 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Title from "./title";
-// import Home from "./home";
-// import About from "./about";
-// import Service from "./service";
-import Portfolio from "./portfolio";
-import NotFound from "./notfound";
-import ComingSoon from "./comingsoon";
-import Gallery from "./gallery";
-import KfcTemplate from "./kfc";
-import AddTemplate from "./add";
-import AgentTemplate from "./agent";
+import { useEffect } from "react";
+// import { useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { info } from "./store/authReducer";
+import Pages from "./pages";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Portfolio />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/comingsoon" element={<ComingSoon />} />
-        <Route path="/notfound" element={<NotFound />} />
-        <Route path="example">
-          <Route index={true} element={<Title />} />
-          {/* <Route path="home" element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="service" element={<Service />} /> */}
-          <Route path="add" element={<AddTemplate />} />
-          <Route path="kfc" element={<KfcTemplate />} />
-          <Route path="agent" element={<AgentTemplate />} />
-        </Route>
-        <Route path="*" element={<Navigate to="/notfound" replace />} />
-      </Routes>
-    </BrowserRouter>
-  );
+  // const location = useLocation();
+  const dispatch = useDispatch();
+  const initialized = useSelector((state) => state.auth.initialized);
+
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch(info());
+    }, 1000);
+  }, [dispatch]);
+
+  // useEffect(() => {
+  //   go2Top();
+  // }, [location.pathname]);
+
+  return initialized ? <Pages /> : null;
 }
 
 export default App;
