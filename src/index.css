@@ -12,3 +12,13 @@ body {
   width: 100%;
   min-height: 100vh;
 }
+
+:root {
+  --color-danger: #7380ec;
+  --color-danger: #ff7782;
+  --color-success: #41f1b6;
+  --color-warning: #ffbb55;
+  --color-info-dark: #7d8da1;
+  --color-info-light: #dce1eb;
+  --color-dark: #363949;
+}

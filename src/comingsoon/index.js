@@ -194,11 +194,11 @@ const Text = () => (
       </div>
       <div>
         <h1 id="minutes">0</h1>
-        <p>Hours</p>
+        <p>Minutes</p>
       </div>
       <div>
         <h1 id="seconds">0</h1>
-        <p>Hours</p>
+        <p>Seconds</p>
       </div>
     </Timer>
     <Link to="/">
