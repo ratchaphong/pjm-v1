@@ -71,7 +71,7 @@ const AddTemplate = () => {
             Promotion
             <ul className={styles.subNav}>
               <li>
-                <a href="/gallery">Gallery</a>
+                <a href="/">Gallery</a>
               </li>
               <li>
                 <a href="/">Home</a>

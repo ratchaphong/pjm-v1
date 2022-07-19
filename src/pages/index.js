@@ -12,6 +12,8 @@ import KfcTemplate from "../kfc";
 import AddTemplate from "../add";
 import AgentTemplate from "../agent";
 import Dashboard from "../dashboard";
+import Register from "../register";
+import Login from "../login";
 
 function Pages() {
   const currentUser = useSelector((state) => state.auth.currentUser);
@@ -19,8 +21,8 @@ function Pages() {
   if (currentUser) {
     routes = (
       <Routes>
-        <Route path="/" element={<ComingSoon />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/comingsoon" element={<ComingSoon />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     );
@@ -31,7 +33,8 @@ function Pages() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/comingsoon" element={<ComingSoon />} />
         <Route path="/notfound" element={<NotFound />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         <Route path="example">
           <Route index={true} element={<Title />} />
           {/* <Route path="home" element={<Home />} />

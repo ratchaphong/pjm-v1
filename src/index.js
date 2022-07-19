@@ -10,7 +10,7 @@ import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  <>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
@@ -18,8 +18,11 @@ root.render(
         </BrowserRouter>
       </PersistGate>
     </Provider>
-  </React.StrictMode>
+  </>
 );
+// This is because of React Strict Mode code.
+// Remove -> <React.StrictMode>, from ReactDOM.render code.
+// Will render 2 times on every re-render:
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

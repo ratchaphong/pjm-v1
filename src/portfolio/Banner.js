@@ -72,7 +72,7 @@ const Container = styled.section`
     white-space: nowrap;
     border-right: 4px solid;
     letter-spacing: 1.5px;
-    animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
+    animation: typing 1.5s steps(30, end), blink-caret 0.5s step-end infinite;
   }
   @keyframes typing {
     from {
@@ -116,7 +116,7 @@ const Banner = () => {
     resetTimeout();
     timeoutRef.current = setTimeout(
       () => setIndex((prevIndex) => (prevIndex === 5 - 1 ? 0 : prevIndex + 1)),
-      5000
+      3000
     );
     return () => {
       resetTimeout();

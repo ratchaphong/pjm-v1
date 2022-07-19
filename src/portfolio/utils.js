@@ -22,3 +22,7 @@ export function withSEO(title, description, keywords) {
     }
   });
 }
+
+export const go2Top = () => {
+  window && window.scrollTo({ top: 0, behavior: "smooth" });
+};

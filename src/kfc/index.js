@@ -44,7 +44,7 @@ const KfcTemplate = () => {
     <div className={styles.container}>
       <section className={styles.main}>
         <header>
-          <a href="/gallery">
+          <a href="/">
             <img src={bbom} className={styles.logo} alt="" />
           </a>
           <div
@@ -64,13 +64,13 @@ const KfcTemplate = () => {
               <a href="/">Home</a>
             </li>
             <li>
-              <a href="/gallery">Menu</a>
+              <a href="/">Menu</a>
             </li>
             <li>
-              <a href="/gallery">About</a>
+              <a href="/">About</a>
             </li>
             <li>
-              <a href="/gallery">Contacts</a>
+              <a href="/">Contacts</a>
             </li>
           </ul>
         </header>
@@ -89,7 +89,7 @@ const KfcTemplate = () => {
               Sodales gravida egestas venenatis dignissim molestie cursus porta.
               Massa lacus pulvinar aliquam mi tristique.
             </p>
-            <a href="/gallery" className={styles.btn}>
+            <a href="/" className={styles.btn}>
               Order Now
             </a>
           </div>

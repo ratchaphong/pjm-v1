@@ -32,26 +32,18 @@ const Navbar = styled.div`
     &:hover {
       font-size: 24px;
       cursor: pointer;
-      transition: all 0.5s;
-    }
-    @media (max-width: 768px) {
-      display: none;
     }
   }
   .humberger {
     display: none;
-    @media (max-width: 768px) {
-      display: flex;
-      align-self: center;
-      opacity: ${(props) => (props.isSticky ? "1" : "0")};
-      transition: opacity 0.3s;
-      font-size: 20px;
-      transition: all 0.3s;
-      &:hover {
-        font-size: 24px;
-        cursor: pointer;
-        transition: all 0.5s;
-      }
+    align-self: center;
+    opacity: ${(props) => (props.isSticky ? "1" : "0")};
+    transition: opacity 0.3s;
+    font-size: 20px;
+    transition: all 0.3s;
+    &:hover {
+      font-size: 24px;
+      cursor: pointer;
     }
   }
   .tabs {
@@ -61,9 +53,6 @@ const Navbar = styled.div`
     align-items: center;
     opacity: ${(props) => (props.isSticky ? "1" : "0")};
     transition: opacity 0.3s;
-    @media (max-width: 768px) {
-      opacity: 0;
-    }
   }
   .tabs .menu {
     font-size: 16px;
@@ -73,8 +62,19 @@ const Navbar = styled.div`
     &:hover {
       font-weight: bold;
       font-size: 20px;
+      color: #f6c90e;
       cursor: pointer;
-      transition: all 0.5s;
+    }
+  }
+  @media (max-width: 768px) {
+    .icon {
+      display: none;
+    }
+    .humberger {
+      display: flex;
+    }
+    .tab {
+      opacity: 0;
     }
   }
 `;

@@ -84,9 +84,11 @@ const Container = styled.section`
     border: none;
     opacity: 1;
     transition: opacity 0.3s;
+    -webkit-text-fill-color: rgba(0, 0, 0, 1);
+    -webkit-opacity: 1;
   }
   .feature .item a {
-    color: #000000;
+    /* color: #000000; */
     text-decoration: none;
   }
   .feature .item .greeting:hover {
