@@ -16,6 +16,8 @@ import project12 from "../assets/images/12.JPG";
 import website1 from "../assets/images/web1.jpg";
 import website2 from "../assets/images/web2.jpg";
 import website3 from "../assets/images/web3.jpg";
+import website4 from "../assets/images/web4.jpg";
+
 import { useLocation } from "react-router-dom";
 
 const ImageBox = ({
@@ -70,6 +72,12 @@ const Gallery = () => {
               title="เว็บหลายหน้า ค่ายฟ้า"
               content="website"
               link={"/example/agent"}
+            />
+            <ImageBox
+              img={website4}
+              title="ระบบหลังบ้าน"
+              content="website"
+              link={"/login"}
             />
           </>
         )}

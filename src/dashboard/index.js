@@ -1,17 +1,15 @@
-import enhancer from "./dashboard.compose";
-import styles from "./dashboard.module.css";
+import enhancer from "./backoffice.compose";
+import styles from "./backoffice.module.css";
 import bbom from "../assets/images/bbom.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAdd,
   faBarChart,
   faBars,
-  faBarsProgress,
-  faCartPlus,
   faCog,
   faFile,
   faMoon,
-  faShapes,
+  faPeopleGroup,
   faShoppingCart,
   faSignOut,
   faSun,
@@ -19,32 +17,11 @@ import {
   faTimes,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-
-const Sales = ({ name, className, icon, total, number }) => {
-  return (
-    <div className={className}>
-      <span>
-        <FontAwesomeIcon icon={icon} />
-      </span>
-      <div className={styles.middle}>
-        <div className={styles.left}>
-          <h3>Total {name}</h3>
-          <h1>$ {total}</h1>
-        </div>
-        <div className={styles.progress}>
-          <svg>
-            <circle cx={38} cy={38} r={36}></circle>
-          </svg>
-          <div className={styles.number}>
-            <p className={styles.infoDarkText}>{number} %</p>
-          </div>
-        </div>
-      </div>
-      <small className={styles.infoDarkText}>Last 24 Hours</small>
-    </div>
-  );
-};
+import Customer from "./customer";
+import Setting from "./setting";
+import Dashboard from "./dashboard";
+import Product from "./product";
+import cx from "classnames";
 
 const Update = ({ name, content, time }) => {
   return (
@@ -66,14 +43,16 @@ const Update = ({ name, content, time }) => {
 const Item = ({ title, icon, time, percent, people }) => {
   return (
     <div className={styles.item}>
-      <div className={styles.icon}>
-        <FontAwesomeIcon icon={icon} />
-      </div>
-      <div className={styles.right}>
+      <div className={styles.left}>
+        <div className={styles.icon}>
+          <FontAwesomeIcon icon={icon} />
+        </div>
         <div className={styles.info}>
           <h3>{title}</h3>
           <small className={styles.infoDarkText}>{time}</small>
         </div>
+      </div>
+      <div className={styles.right}>
         <h5 className={percent > 0 ? styles.successText : styles.errorText}>
           {percent}%
         </h5>
@@ -83,7 +62,12 @@ const Item = ({ title, icon, time, percent, people }) => {
   );
 };
 
-const Sidebar = ({ onClick = () => {} }) => {
+const Sidebar = ({
+  onClick = () => {},
+  signout = () => {},
+  isState = "",
+  setIsState = () => {},
+}) => {
   return (
     <>
       <div className={styles.top}>
@@ -99,37 +83,52 @@ const Sidebar = ({ onClick = () => {} }) => {
         </div>
       </div>
       <ul className={styles.sidebar}>
-        <li className={styles.active}>
+        <li
+          className={isState === "dashboard" ? styles.active : {}}
+          onClick={() => {
+            setIsState("dashboard");
+          }}
+        >
           <span>
             <FontAwesomeIcon icon={faTableCells} />
           </span>
           <h3>Dashboard</h3>
         </li>
-        <li>
+        <li
+          className={isState === "customer" ? styles.active : {}}
+          onClick={() => {
+            setIsState("customer");
+          }}
+        >
           <span>
             <FontAwesomeIcon icon={faUser} />
           </span>
           <h3>Customer</h3>
         </li>
-        <li>
+        <li className={styles.inactive}>
           <span>
             <FontAwesomeIcon icon={faBarChart} />
           </span>
           <h3>Analytics</h3>
         </li>
-        <li>
+        <li className={styles.inactive}>
           <span>
             <FontAwesomeIcon icon={faFile} />
           </span>
           <h3>Reports</h3>
         </li>
-        <li>
+        <li
+          className={isState === "setting" ? styles.active : {}}
+          onClick={() => {
+            setIsState("setting");
+          }}
+        >
           <span>
             <FontAwesomeIcon icon={faCog} />
           </span>
           <h3>Setting</h3>
         </li>
-        <li>
+        <li onClick={signout}>
           <span>
             <FontAwesomeIcon icon={faSignOut} />
           </span>
@@ -140,126 +139,91 @@ const Sidebar = ({ onClick = () => {} }) => {
   );
 };
 
-const Dashboard = (props) => {
-  const { onChange } = props;
-  const [isHumberger, setIsHamburger] = useState(false);
-  const onClick = () => {
-    setIsHamburger(!isHumberger);
-  };
+const BackOffice = (props) => {
+  const {
+    onChange,
+    onClick,
+    isHumberger,
+    signout,
+    users,
+    user,
+    isState,
+    setIsState,
+    onSubmitSetting,
+    customers,
+    customer,
+    selectedCustomer,
+    onSubmitCustomer,
+    onDeleteCustomer,
+    updateTime,
+    isAddCustomer,
+    setIsAddCustomer,
+    onAddCustomer,
+    products,
+    product,
+    selectedProduct,
+    onDeleteProduct,
+    isAddProduct,
+    setIsAddProduct,
+    onSubmitProduct,
+    onAddProduct,
+  } = props;
   return (
     <div className={styles.container}>
       <aside>
         <div className={styles.humberger} onClick={onClick}>
           <FontAwesomeIcon icon={faBars} />
         </div>
-        {isHumberger && (
-          <div className={styles.fixed}>
-            <Sidebar onClick={onClick} />
-          </div>
-        )}
-        <Sidebar />
+        <div
+          className={
+            isHumberger ? styles.fixed : cx(styles.fixed, styles.reverse)
+          }
+        >
+          <Sidebar
+            onClick={onClick}
+            signout={signout}
+            isState={isState}
+            setIsState={setIsState}
+          />
+        </div>
+        <Sidebar signout={signout} isState={isState} setIsState={setIsState} />
       </aside>
       <main>
-        <section id="dashboard">
-          <h1>Dashboard</h1>
-          <div className={styles.date}>
-            <input
-              type={"date"}
-              onChange={(e) => {
-                onChange({ date: e.target.value });
-              }}
-            />
-          </div>
-          <div className={styles.insights}>
-            <Sales
-              name={"Sales"}
-              className={styles.sales}
-              icon={faBarChart}
-              total={"25,514"}
-              number={"80"}
-            />
-            <Sales
-              name={"Expenses"}
-              className={styles.expenses}
-              icon={faBarsProgress}
-              total={"15,514"}
-              number={"30"}
-            />
-            <Sales
-              name={"Income"}
-              className={styles.income}
-              icon={faShapes}
-              total={"5,514"}
-              number={"19"}
-            />
-          </div>
-          <div className={styles.recentOrder}>
-            <h2>Recent Orders</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>Product Name</th>
-                  <th>Product Number</th>
-                  <th>Payment</th>
-                  <th>Status</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Foldable Mini Drone</td>
-                  <td>85631</td>
-                  <td>Due</td>
-                  <td>Pending</td>
-                  <td>Details</td>
-                </tr>
-                <tr>
-                  <td>Foldable Mini Drone</td>
-                  <td>85631</td>
-                  <td>Due</td>
-                  <td>Pending</td>
-                  <td>Details</td>
-                </tr>
-                <tr>
-                  <td>Foldable Mini Drone</td>
-                  <td>85631</td>
-                  <td>Due</td>
-                  <td>Pending</td>
-                  <td>Details</td>
-                </tr>
-                <tr>
-                  <td>Foldable Mini Drone</td>
-                  <td>85631</td>
-                  <td>Due</td>
-                  <td>Pending</td>
-                  <td>Details</td>
-                </tr>
-                <tr>
-                  <td>Foldable Mini Drone</td>
-                  <td>85631</td>
-                  <td>Due</td>
-                  <td>Pending</td>
-                  <td>Details</td>
-                </tr>
-                <tr>
-                  <td>Foldable Mini Drone</td>
-                  <td>85631</td>
-                  <td>Due</td>
-                  <td>Pending</td>
-                  <td>Details</td>
-                </tr>
-                <tr>
-                  <td>Foldable Mini Drone</td>
-                  <td>85631</td>
-                  <td>Due</td>
-                  <td>Pending</td>
-                  <td>Details</td>
-                </tr>
-              </tbody>
-            </table>
-            <small>Show All</small>
-          </div>
-        </section>
+        {isState === "dashboard" && (
+          <Dashboard
+            onChange={onChange}
+            products={products}
+            selectedProduct={selectedProduct}
+            setIsState={setIsState}
+          />
+        )}
+        {isState === "customer" && (
+          <Customer
+            customers={customers}
+            customer={customer}
+            selectedCustomer={selectedCustomer}
+            onSubmitCustomer={onSubmitCustomer}
+            onDeleteCustomer={onDeleteCustomer}
+            isAddCustomer={isAddCustomer}
+            setIsAddCustomer={setIsAddCustomer}
+            onAddCustomer={onAddCustomer}
+          />
+        )}
+        {isState === "setting" && (
+          <Setting data={user} onSubmitSetting={onSubmitSetting} />
+        )}
+        {isState === "product" && (
+          <Product
+            products={products}
+            product={product}
+            selectedProduct={selectedProduct}
+            onSubmitProduct={onSubmitProduct}
+            onDeleteProduct={onDeleteProduct}
+            isAddProduct={isAddProduct}
+            setIsAddProduct={setIsAddProduct}
+            onAddProduct={onAddProduct}
+          />
+        )}
       </main>
       <div className={styles.right}>
         <div className={styles.top}>
@@ -277,7 +241,7 @@ const Dashboard = (props) => {
           <div className={styles.profile}>
             <div className={styles.info}>
               <p>
-                Hey, <b>Daniel</b>
+                Hey, <b>{user?.firstName || "Daniel"}</b>
               </p>
               <small className={styles.textMuted}>Admin</small>
             </div>
@@ -286,46 +250,54 @@ const Dashboard = (props) => {
             </div>
           </div>
         </div>
-        <div className={styles.recentUpdates}>
-          <h2>Recent Updates</h2>
-          <div className={styles.updates}>
-            <Update
-              name="Mike Tyson"
-              content=" received his order of Night lion tech GPS drone."
-              time="2 Minutes Ago"
-            />
-            <Update
-              name="Mike Tyson"
-              content=" received his order of Night lion tech GPS drone."
-              time="2 Minutes Ago"
-            />
+        {customers && customers.length > 0 && (
+          <div className={styles.recentUpdates}>
+            <h2>Recent Updates</h2>
+            <div className={styles.updates}>
+              {[...customers]
+                .reverse()
+                .slice(0, 2)
+                .map((customer, i) => (
+                  <Update
+                    index={i}
+                    name={`${customer.firstName} ${customer.lastName}`}
+                    content=" have registered."
+                    time={updateTime(customer.createdAt)}
+                  />
+                ))}
+            </div>
           </div>
-        </div>
+        )}
         <div className={styles.salesAnalytics}>
           <h2>Recent Updates</h2>
           <Item
-            title="ONLINE ORDERS"
+            title="NEW ORDERS"
             icon={faShoppingCart}
             time="Last 24 Hours"
-            percent={39}
-            people="9849"
+            percent={7}
+            people={products.length}
           />
           <Item
-            title="OFFLINE ORDERS"
-            icon={faCartPlus}
+            title="NEW USER"
+            icon={faUser}
             time="Last 24 Hours"
             percent={-9}
-            people="1849"
+            people={users.length}
           />
           <Item
             title="NEW CUSTOMER"
-            icon={faUser}
+            icon={faPeopleGroup}
             time="Last 24 Hours"
-            percent={-81}
-            people="49"
+            percent={-8}
+            people={customers.length}
           />
-
-          <div className={styles.addProduct}>
+          <div
+            className={styles.addProduct}
+            onClick={() => {
+              setIsState("product");
+              setIsAddProduct(true);
+            }}
+          >
             <div>
               <span className={styles.icon}>
                 <FontAwesomeIcon icon={faAdd} />
@@ -339,4 +311,4 @@ const Dashboard = (props) => {
   );
 };
 
-export default enhancer(Dashboard);
+export default enhancer(BackOffice);

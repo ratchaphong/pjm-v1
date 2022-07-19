@@ -293,7 +293,7 @@ const Team = () => {
           <div className="cards">
             <Card
               img={bbas}
-              name="มูฮาหมัด ชัยวุฒิ"
+              name="ชัยวุฒิ กตัญวิญญู"
               job="System Analytics"
               fa="#"
               tw="#"

@@ -73,7 +73,7 @@ export const login =
   async (dispatch) => {
     dispatch(loginStart());
     try {
-      const res = await publicRequest.post("/auth/login", user);
+      const res = await publicRequest.post("/auth/login/admin", user);
       dispatch(loginSuccess(res.data));
       cb();
     } catch (error) {

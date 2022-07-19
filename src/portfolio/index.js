@@ -33,7 +33,7 @@ const Body = styled.section`
 const Portfolio = () => {
   useEffect(() => {
     withSEO(
-      "PROJECTMAN - 2023 Developer",
+      "PROJECTMAN | Software Development Team",
       "ผู้ให้บริการรับทำ Website, Microcontroller และ Mobile Application จบครบในที่เดียว",
       "รับทำโปรเจค, รับเขียนโปรแกรม, รับเขียน Website, รับเขียนโปรแกรม Microcontroller, รับเขียน Mobile Application Cross Platform"
     );
