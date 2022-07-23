@@ -275,21 +275,21 @@ const BackOffice = (props) => {
             icon={faShoppingCart}
             time="Last 24 Hours"
             percent={7}
-            people={products.length}
+            people={products ? products.length : 0}
           />
           <Item
             title="NEW USER"
             icon={faUser}
             time="Last 24 Hours"
             percent={-9}
-            people={users.length}
+            people={users ? users.length : 0}
           />
           <Item
             title="NEW CUSTOMER"
             icon={faPeopleGroup}
             time="Last 24 Hours"
             percent={-8}
-            people={customers.length}
+            people={customers ? customers.length : 0}
           />
           <div
             className={styles.addProduct}
