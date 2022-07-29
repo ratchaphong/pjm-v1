@@ -11,13 +11,16 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
 
 const Container = styled.section`
   font-family: "Kanit", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 64px;
+  /* margin-bottom: 64px; */
+  width: 80%;
+  margin: 0 auto 64px;
   color: #f1f1f1;
   > h2 {
     margin-bottom: 16px;
@@ -218,12 +221,160 @@ const Container = styled.section`
   }
 `;
 
-const Card = ({ img, name, job, fa = "#", tw = "#", ins = "#", yu = "#" }) => {
+const InterviewContainer = styled.div`
+  padding: 64px 32px;
+  width: 100%;
+  height: 600px;
+  border: 4px solid #f1f1f1;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  column-gap: 36px;
+  /* margin-bottom: 64px; */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: fit-content;
+  }
+  .label {
+    width: 68%;
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-bottom: 36px;
+    }
+    /* > div {
+      display: flex;
+      flex-direction: column;
+      row-gap: 24px;
+      @media (max-width: 1024px) {
+        > p span {
+          display: none;
+        }
+      }
+    }
+    > div section b {
+      color: #f6c90e;
+      letter-spacing: 1px;
+    }
+    > div section ul {
+      padding-left: 24px;
+      list-style: circle;
+    } */
+  }
+  .label .header {
+    margin-bottom: 16px;
+    font-size: 32px;
+    letter-spacing: 2px;
+    color: #f6c90e;
+    @media (max-width: 1024px) {
+      > span {
+        display: none;
+      }
+    }
+  }
+  .label .context {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    animation: SlideIn 1s linear forwards;
+    @media (max-width: 1024px) {
+      > p span {
+        display: none;
+      }
+    }
+  }
+  .label .context section b {
+    color: #f6c90e;
+    letter-spacing: 1px;
+  }
+  .label .context section ul {
+    padding-left: 24px;
+    list-style: circle;
+  }
+  .image {
+    width: 32%;
+    overflow: hidden;
+    @media (max-width: 768px) {
+      overflow: hidden;
+      width: unset;
+    }
+  }
+  .image .design {
+    max-width: 100%;
+    border-radius: 4%;
+    opacity: 0;
+    animation: fadeIn 1s linear forwards;
+    filter: grayscale(0.8) contrast(1.3) brightness(1.2);
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes SlideIn {
+    0% {
+      transform: translateY(-4rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+`;
+
+const WaitingText = styled.div`
+  text-align: center;
+  > p:nth-child(1),
+  > p:nth-child(2) {
+    font-family: "Edosz";
+    letter-spacing: 1px;
+  }
+  > p:nth-child(1) {
+    opacity: 0;
+    animation: fadeIn 1s linear forwards;
+    font-size: 64px;
+    color: #870f06;
+    @media (max-width: 768px) {
+      font-size: 32px;
+    }
+  }
+  > p:nth-child(2) {
+    font-size: 32px;
+    margin: 16px 0 32px 0;
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+`;
+
+const Card = ({
+  index,
+  img,
+  name,
+  job,
+  fa = "#",
+  tw = "#",
+  ins = "#",
+  yu = "#",
+  setSeletctedItem = () => {},
+}) => {
   return (
     <div className="card">
       <div className="overlay"></div>
       <div className="content">
-        <div className="img">
+        <div className="img" onClick={() => setSeletctedItem(index)}>
           <img src={img} alt="" />
         </div>
         <div className="details">
@@ -250,6 +401,7 @@ const Card = ({ img, name, job, fa = "#", tw = "#", ins = "#", yu = "#" }) => {
 };
 
 const Team = () => {
+  const [selectedItem, setSeletctedItem] = useState(1);
   return (
     <Container id="team">
       <h2 className="title">ทีมงาน</h2>
@@ -259,6 +411,7 @@ const Team = () => {
         <div className="main-card">
           <div className="cards">
             <Card
+              index={1}
               img={bbom2}
               name="ธีรภัทร์ น้ำเพชร"
               job="Team Lead"
@@ -266,8 +419,10 @@ const Team = () => {
               tw="#"
               ins="#"
               yu="#"
+              setSeletctedItem={setSeletctedItem}
             />
             <Card
+              index={2}
               img={rratcha}
               name={
                 <>
@@ -279,8 +434,10 @@ const Team = () => {
               tw="#"
               ins="#"
               yu="#"
+              setSeletctedItem={setSeletctedItem}
             />
             <Card
+              index={3}
               img={mmark}
               name="ธารินทร์ ภู่พูลเพียน"
               job="Mobile Developer"
@@ -288,10 +445,12 @@ const Team = () => {
               tw="#"
               ins="#"
               yu="#"
+              setSeletctedItem={setSeletctedItem}
             />
           </div>
           <div className="cards">
             <Card
+              index={4}
               img={bbas}
               name="ชัยวุฒิ กตัญวิญญู"
               job="System Analytics"
@@ -299,8 +458,10 @@ const Team = () => {
               tw="#"
               ins="#"
               yu="#"
+              setSeletctedItem={setSeletctedItem}
             />
             <Card
+              index={5}
               img={mumm}
               name="ภัทรพล อ่องมี"
               job="Project Manager"
@@ -308,6 +469,7 @@ const Team = () => {
               tw="#"
               ins="#"
               yu="#"
+              setSeletctedItem={setSeletctedItem}
             />
           </div>
         </div>
@@ -316,6 +478,107 @@ const Team = () => {
           <label htmlFor="two" className="two"></label>
         </div>
       </div>
+      <InterviewContainer>
+        <div className="label">
+          <h2 className="header">
+            ทำความรู้จักกับ PROJECTMAN
+            <span>
+              <br />
+              นำทีมโดย อดีตนักเรียนทุนกิจกรรมดีเด่น
+            </span>
+          </h2>
+          {selectedItem === 1 ? (
+            <div className="context">
+              <p>
+                นาย ธีรภัทร์ น้ำเพชร ชื่อเล่น น้องบอม
+                <br />
+                <span>จบปริญญาตรีภาควิชา</span>วิศวกรรมไฟฟ้า
+                <br />
+                <span>
+                  สาขา อิเล็กทรอนิกส์และระบบคอมพิวเตอร์ มหาวิทยาลัยศิลปากร
+                </span>
+              </p>
+              <section>
+                <b>กิจกรรมที่ผ่านมา</b>
+                <ul>
+                  <li>เคยรับทุนกิจกรรมดีเด่น</li>
+                  <li>เป็นประธานรุ่นภาควิชาวิศวกรรมไฟฟ้า</li>
+                  <li> เป็นผู้ควบคุมกิจกรรมประชุมเชียร์ (พี่ซ้อมน้อง)</li>
+                  <li>การแข่งขันและได้รับรางวัลมากมาย</li>
+                </ul>
+              </section>
+              <section>
+                <b>เป็นคนแบบไหนชอบทำอะไร</b>
+                <ul>
+                  <li>เป็นคนที่มีความเป็นผู้นำสูง</li>
+                  <li>กล้าคิดกล้าตัดสินใจและรับฟังคนอื่นด้วยเสมอ</li>
+                  <li>
+                    มีความคิดสร้างสรรค์กล้าคิดกล้าทำมีไอเดียใหม่ ๆ อยู่เสมอ
+                  </li>
+                </ul>
+              </section>
+            </div>
+          ) : (
+            <WaitingText>
+              {selectedItem === 2 && (
+                <>
+                  <p className="name">ratchaphong</p>
+                  <p className="position">web developer of projectman family</p>
+                </>
+              )}
+              {selectedItem === 3 && (
+                <>
+                  <p className="name">tharin</p>
+                  <p className="position">
+                    mobile developer of projectman family
+                  </p>
+                </>
+              )}
+              {selectedItem === 4 && (
+                <>
+                  <p className="name">chaithong</p>
+                  <p className="position">
+                    system analysict of projectman family
+                  </p>
+                </>
+              )}
+              {selectedItem === 5 && (
+                <>
+                  <p className="name">pattarapol</p>
+                  <p className="position">
+                    project manager of projectman family
+                  </p>
+                </>
+              )}
+              <p>อยู่ระหว่างการจัดเตรียมเนื้อหา ขออภัยในความไม่สะดวก</p>
+            </WaitingText>
+          )}
+        </div>
+        <div className="image">
+          {/* <img
+            src={
+              selectedItem === 1
+                ? bbom2
+                : selectedItem === 2
+                ? rratcha
+                : selectedItem === 3
+                ? mmark
+                : selectedItem === 4
+                ? bbas
+                : mumm
+            }
+            className="design"
+            alt=""
+          /> */}
+          {selectedItem === 1 && <img src={bbom2} className="design" alt="" />}
+          {selectedItem === 2 && (
+            <img src={rratcha} className="design" alt="" />
+          )}
+          {selectedItem === 3 && <img src={mmark} className="design" alt="" />}
+          {selectedItem === 4 && <img src={bbas} className="design" alt="" />}
+          {selectedItem === 5 && <img src={mumm} className="design" alt="" />}
+        </div>
+      </InterviewContainer>
     </Container>
   );
 };

@@ -8,6 +8,8 @@ import Work from "./Work";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import { withSEO } from "./utils";
+import Suggestion from "./Suggestion";
+import Review from "./Review";
 
 const Container = styled.div`
   width: 100%;
@@ -23,9 +25,10 @@ const Container = styled.div`
 `;
 
 const Body = styled.section`
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding: 64px 0;
-  width: 80%;
+  /* width: 80%; */
+  width: 100%;
   display: flex;
   flex-direction: column;
 `;
@@ -43,6 +46,8 @@ const Portfolio = () => {
       <Navigator />
       <Banner />
       <Body>
+        <Suggestion />
+        <Review />
         <Work />
         <About />
         <Team />

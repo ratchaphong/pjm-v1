@@ -2,14 +2,16 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const delay = 5;
+const delay = 7;
 
 const Container = styled.section`
   font-family: "Kanit", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 64px;
+  /* margin-bottom: 64px; */
+  width: 80%;
+  margin: 0 auto 64px;
   color: #f1f1f1;
   > div:first-of-type h2 {
     margin-bottom: 16px;
@@ -121,7 +123,7 @@ const Carousel = styled.div`
     display: flex;
     flex-direction: column;
     row-gap: 16px;
-    background: #00000050;
+    background: #00000080;
     transition: opacity 0.3s ease;
     > h1 {
       font-size: 32px;
@@ -140,7 +142,7 @@ const Carousel = styled.div`
       padding: 8px;
       row-gap: 8px;
       border: unset;
-      background: unset;
+      /* background: unset; */
       > h1 {
         font-size: 24px;
         letter-spacing: 3px;
@@ -189,9 +191,9 @@ const Work = () => {
   return (
     <Container id="works">
       <div className="">
-        <h2>ผลงาน</h2>
+        <h2>คลังผลงาน</h2>
       </div>
-      <p className="content">ตัวอย่างผลงานที่ร่วมพัฒนากับทีมงานที่ผ่านมา</p>
+      <p className="content">คลังผลงานที่ร่วมพัฒนากับทีมงานที่ผ่านมา</p>
       <div className="underline" />
       <Carousel className="container">
         <input type="radio" name="slider" id="item-1" checked={page === 1} />
