@@ -17,6 +17,7 @@ import website1 from "../assets/images/web1.jpg";
 import website2 from "../assets/images/web2.jpg";
 import website3 from "../assets/images/web3.jpg";
 import website4 from "../assets/images/web4.jpg";
+import website5 from "../assets/images/web5.jpg";
 
 import { useLocation } from "react-router-dom";
 
@@ -78,6 +79,12 @@ const Gallery = () => {
               title="ระบบหลังบ้าน"
               content="website"
               link={"/login"}
+            />
+            <ImageBox
+              img={website5}
+              title="เว็บประกันชีวิต สีฟ้า"
+              content="website"
+              link={"/example/life"}
             />
           </>
         )}

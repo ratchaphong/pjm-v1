@@ -159,7 +159,7 @@ const AddTemplate = () => {
           <Card name={"Teerapat"} img={bbom} />
           <Card name={"Ratchaphong"} img={ratcha} />
           <Card name={"Tharin"} img={mark} />
-          <Card name={"Chaithong"} img={bass} />
+          <Card name={"Chaiwut"} img={bass} />
         </div>
         <div className={styles.alliance}>
           <div className={styles.title}>Alliance</div>

@@ -20,7 +20,7 @@ const Card = ({ img, name }) => {
           <h2 className={styles.name}>
             {name}
             <br />
-            <span>Hipter</span>
+            <span>Hipster</span>
           </h2>
           <div className={styles.data}>
             <h3>
@@ -61,7 +61,7 @@ const AgentTemplate = () => {
         <div className={styles.banner}>
           <img src={bbom} alt="" />
           <div className={styles.bannerText}>
-            Hipter : Agent 47
+            Hipster : Agent 47
             <Link to="/">
               <button type="button">welcome</button>
             </Link>
@@ -74,7 +74,7 @@ const AgentTemplate = () => {
             <Card img={ratcha} name="Ratchaphong" />
             <Card img={tharin} name="Tharin" />
           </div>
-          <h2>What dose hipter mean ?</h2>
+          <h2>What dose hipster mean ?</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
             iaculis, urna ac accumsan eleifend, ex quam finibus dolor, sit amet
