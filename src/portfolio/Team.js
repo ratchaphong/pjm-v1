@@ -4,6 +4,7 @@ import mmark from "../assets/images/ttharin.jpg";
 import rratcha from "../assets/images/rratcha.jpg";
 import bbas from "../assets/images/bbas.jpg";
 import mumm from "../assets/images/mum.jpg";
+import logo_review from "../assets/images/logo_review.png";
 import {
   faFacebookF,
   faInstagram,
@@ -327,6 +328,7 @@ const InterviewContainer = styled.div`
 `;
 
 const WaitingText = styled.div`
+  position: relative;
   text-align: center;
   > p:nth-child(1),
   > p:nth-child(2) {
@@ -348,6 +350,23 @@ const WaitingText = styled.div`
     @media (max-width: 768px) {
       font-size: 24px;
     }
+  }
+  > div:last-of-type {
+    position: absolute;
+    width: 150px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0.2;
+    /* filter: grayscale(1); */
+    @media (max-width: 768px) {
+      width: 120px;
+    }
+  }
+  > div:last-of-type img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
   }
   @keyframes fadeIn {
     0% {
@@ -524,6 +543,9 @@ const Team = () => {
                 <>
                   <p className="name">ratchaphong</p>
                   <p className="position">web developer of projectman family</p>
+                  <div>
+                    <img src={logo_review} alt="" />
+                  </div>
                 </>
               )}
               {selectedItem === 3 && (
@@ -532,22 +554,31 @@ const Team = () => {
                   <p className="position">
                     mobile developer of projectman family
                   </p>
+                  <div>
+                    <img src={logo_review} alt="" />
+                  </div>
                 </>
               )}
               {selectedItem === 4 && (
                 <>
-                  <p className="name">chaithong</p>
+                  <p className="name">chaiwut</p>
                   <p className="position">
-                    system analysict of projectman family
+                    system analytics of projectman family
                   </p>
+                  <div>
+                    <img src={logo_review} alt="" />
+                  </div>
                 </>
               )}
               {selectedItem === 5 && (
                 <>
-                  <p className="name">pattarapol</p>
+                  <p className="name">pattharaphon</p>
                   <p className="position">
                     project manager of projectman family
                   </p>
+                  <div>
+                    <img src={logo_review} alt="" />
+                  </div>
                 </>
               )}
               <p>อยู่ระหว่างการจัดเตรียมเนื้อหา ขออภัยในความไม่สะดวก</p>

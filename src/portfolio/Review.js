@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import website2 from "../assets/images/web2.jpg";
 import website3 from "../assets/images/web3.jpg";
+import website4 from "../assets/images/web5.jpg";
 
 const Container = styled.section`
   font-family: "Kanit", sans-serif;
@@ -36,7 +37,8 @@ const Container = styled.section`
     display: flex;
     flex-wrap: wrap;
     /* overflow: hidden; */
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    justify-content: center;
     gap: 36px;
   }
   .padding .review .image {
@@ -81,6 +83,11 @@ const Review = () => {
           <div className="image">
             <Link to="/example/agent">
               <img src={website3} alt="" />
+            </Link>
+          </div>
+          <div className="image">
+            <Link to="/example/life">
+              <img src={website4} alt="" />
             </Link>
           </div>
         </div>

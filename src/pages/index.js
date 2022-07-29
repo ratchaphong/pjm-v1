@@ -14,6 +14,7 @@ import AgentTemplate from "../agent";
 import Dashboard from "../dashboard";
 import Register from "../register";
 import Login from "../login";
+import LifeTemplate from "../life";
 
 function Pages() {
   const currentUser = useSelector((state) => state.auth.currentUser);
@@ -40,6 +41,7 @@ function Pages() {
           {/* <Route path="home" element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="service" element={<Service />} /> */}
+          <Route path="life" element={<LifeTemplate />} />
           <Route path="add" element={<AddTemplate />} />
           <Route path="kfc" element={<KfcTemplate />} />
           <Route path="agent" element={<AgentTemplate />} />
