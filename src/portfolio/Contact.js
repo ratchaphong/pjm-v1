@@ -9,7 +9,9 @@ import styled from "styled-components";
 
 const Container = styled.section`
   font-family: "Kanit", sans-serif;
-  width: 100%;
+  /* width: 100%; */
+  width: 80%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;

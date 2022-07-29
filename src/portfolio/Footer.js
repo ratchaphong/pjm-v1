@@ -18,10 +18,9 @@ const Container = styled.section`
   color: #f1f1f1;
   padding: 0 10%;
   box-sizing: border-box;
-  @media (max-width: 1024px) {
+  /* @media (max-width: 1024px) {
     height: 240px;
-  }
-
+  } */
   .content {
     width: 100%;
     align-self: flex-start;
