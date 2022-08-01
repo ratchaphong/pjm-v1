@@ -110,6 +110,68 @@
   margin: 0 auto;
 }
 
+.container .main .content .privilege {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.container .main .content .privilege .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30%;
+  padding: 16px;
+  border: 4px solid #f1f1f1;
+  gap: 24px;
+}
+
+.container .main .content .privilege .card .cardText .cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.container .main .content .privilege .card .cardText .cardHeader h3 {
+  font-size: 24px;
+}
+
+.container .main .content .privilege .card .cardText .cardHeader span {
+  font-size: 36px;
+}
+
+.container .main .content .privilege .card button {
+  height: 48px;
+  padding: 0 24px;
+  color: #fff;
+  font-size: 16px;
+  background-color: #00529a;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.container .main .content .privilege .card button:hover {
+  opacity: 0.7;
+}
+
+.container .main .content .privilegeImage {
+  width: 100%;
+  height: 400px;
+  display: block;
+  margin-bottom: 24px;
+}
+
+.container .main .content .privilegeImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .container .main .content .underline {
   width: 20%;
   height: 4px;
@@ -194,6 +256,7 @@
   box-shadow: 0 36px 80px rgba(0, 0, 0, 0.15);
   transition: 0.5s;
 }
+
 .content .benefits .card:hover {
   height: 330px;
 }
@@ -340,6 +403,12 @@
     gap: 96px;
   }
   .content .benefits .card {
+    width: 100%;
+  }
+  .container .main .content .privilege {
+    row-gap: 24px;
+  }
+  .container .main .content .privilege .card {
     width: 100%;
   }
 }

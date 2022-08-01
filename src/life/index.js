@@ -12,7 +12,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./life.module.css";
-import logo_review from "../assets/images/logo_review.png";
 import { Link } from "react-router-dom";
 
 const LifeTemplate = () => {
@@ -20,7 +19,11 @@ const LifeTemplate = () => {
     <div className={styles.container}>
       <header className={styles.header}>
         <div>
-          <img src={logo_review} alt="" />
+          {/* <img src={logo_review} alt="" /> */}
+          <h1>PROJECTMAN</h1>
+          <small>
+            <span></span>SOFTWARE HOUSE<span></span>
+          </small>
         </div>
       </header>
       <div className={styles.body}>

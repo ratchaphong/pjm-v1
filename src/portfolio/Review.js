@@ -3,6 +3,7 @@ import styled from "styled-components";
 import website2 from "../assets/images/web2.jpg";
 import website3 from "../assets/images/web3.jpg";
 import website4 from "../assets/images/web5.jpg";
+import website5 from "../assets/images/web6.jpg";
 
 const Container = styled.section`
   font-family: "Kanit", sans-serif;
@@ -88,6 +89,11 @@ const Review = () => {
           <div className="image">
             <Link to="/example/life">
               <img src={website4} alt="" />
+            </Link>
+          </div>
+          <div className="image">
+            <Link to="/example/friday">
+              <img src={website5} alt="" />
             </Link>
           </div>
         </div>

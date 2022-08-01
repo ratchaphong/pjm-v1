@@ -109,9 +109,15 @@
   filter: grayscale();
 }
 
-.container .main .content .slider .slides img {
+.container .main .content .slider .slides {
   width: 100%;
   max-width: 600px;
+}
+
+.container .main .content .slider .slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .container .main .footer {
