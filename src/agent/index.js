@@ -6,7 +6,13 @@ import tharin from "../assets/images/ttharin.jpg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronRight,
+  faCog,
+  faDollar,
+  faShield,
+  faShieldAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 const Card = ({ img, name }) => {
@@ -43,6 +49,27 @@ const Card = ({ img, name }) => {
   );
 };
 
+const Item = ({ title, icon, button }) => {
+  return (
+    <div className={styles.card}>
+      <div className={styles.cardText}>
+        <div className={styles.cardHeader}>
+          <h3>{title}</h3>
+          <span>
+            <FontAwesomeIcon icon={icon} color={"#00529a"} />
+          </span>
+        </div>
+        <p>
+          at ultricies dui molestie. Aenean ac mauris at purus sagittis
+          pharetra. Etiam maximus urna vitae dui pretium euismod. Vestibulum
+          maximus justo at nunc varius, sit amet ultricies turpis porta.
+        </p>
+      </div>
+      {button && <button>Lorem ipsum dolor</button>}
+    </div>
+  );
+};
+
 const AgentTemplate = () => {
   return (
     <div className={styles.container}>
@@ -59,7 +86,11 @@ const AgentTemplate = () => {
       </header>
       <section className={styles.main}>
         <div className={styles.banner}>
-          <img src={bbom} alt="" />
+          {/* <img src={bbom} alt="" /> */}
+          <img
+            src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            alt=""
+          />
           <div className={styles.bannerText}>
             Hipster : Agent 47
             <Link to="/">
@@ -68,7 +99,23 @@ const AgentTemplate = () => {
           </div>
         </div>
         <div className={styles.content}>
-          <h2>Benefits</h2>
+          <h2>Privilege</h2>
+          <div className={styles.privilege}>
+            <Item
+              title="Mauris vestibulum diam quis ex aliquet."
+              icon={faShieldAlt}
+              button
+            />
+            <Item title="Vestibulum sit amet ante turpis." icon={faCog} />
+            <Item title="Cras vestibulum mauris felis." icon={faDollar} />
+          </div>
+          <div className={styles.privilegeImage}>
+            <img
+              src="https://images.unsplash.com/photo-1508780709619-79562169bc64?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              alt=""
+            />
+          </div>
+          <h2>About Us</h2>
           <div className={styles.benefits}>
             <Card img={bbom2} name="Teeraphat" />
             <Card img={ratcha} name="Ratchaphong" />

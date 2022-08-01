@@ -1,4 +1,9 @@
 import {
+  faFacebookF,
+  faFacebookMessenger,
+  faLine,
+} from "@fortawesome/free-brands-svg-icons";
+import {
   faEnvelope,
   faMapMarked,
   faPaperPlane,
@@ -64,11 +69,16 @@ const Container = styled.section`
   .iframe .form .location .email {
     display: flex;
     align-items: center;
+    column-gap: 8px;
     .icon {
       font-size: 32px;
     }
-    label {
+    /* label {
       margin-left: 8px;
+    } */
+    a {
+      color: #f1f1f1;
+      text-decoration: none;
     }
   }
   .iframe .form .contact-form {
@@ -148,21 +158,29 @@ const Banner = () => {
           <div className="location">
             <div className="map">
               <div className="icon">
-                <FontAwesomeIcon icon={faMapMarked} />
+                <FontAwesomeIcon icon={faLine} />
               </div>
-              <label>นครปฐม</label>
+              <label>@604rnpk</label>
             </div>
             <div className="phone">
               <div className="icon">
-                <FontAwesomeIcon icon={faPhone} />
+                <FontAwesomeIcon icon={faFacebookMessenger} />
               </div>
-              <label>+66(0)87 415 4193</label>
+              <a
+                href="https://www.facebook.com/projectman.official"
+                target="_blank"
+                rel="noreferrer"
+              >
+                projectman.official
+              </a>
             </div>
             <div className="email">
               <div className="icon">
                 <FontAwesomeIcon icon={faEnvelope} />
               </div>
-              <label>ratchaphongc1@gmail.com</label>
+              <a href="mailto:user_01@projectman-dev.com">
+                user_01@projectman-dev.com
+              </a>
             </div>
           </div>
           <div className="contact-form">

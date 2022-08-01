@@ -3,7 +3,10 @@ import cx from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAmbulance,
+  faCar,
+  faDesktop,
   faHeart,
+  faHeartCircleCheck,
   faMobile,
   faPhone,
   faPlane,
@@ -17,8 +20,13 @@ import bbom3 from "../assets/images/bbom2.jpg";
 import ratcha from "../assets/images/rratcha.jpg";
 import mark from "../assets/images/ttharin.jpg";
 import bass from "../assets/images/bbas.jpg";
+import { faOldRepublic } from "@fortawesome/free-brands-svg-icons";
 
-const slideImages = ["bbom2", "rratcha"];
+// const slideImages = ["bbom2", "rratcha"];
+const slideImages = [
+  "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80",
+  "https://images.unsplash.com/photo-1487611459768-bd414656ea10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+];
 const delay = 5000;
 
 const Card = ({ name, img }) => {
@@ -28,9 +36,11 @@ const Card = ({ name, img }) => {
       <div className={styles.albumContent}>
         <div className={styles.albumInfo}>
           <h3>{name}</h3>
-          <p>Specialist</p>
+          <p>Contrary to popular belief.</p>
         </div>
-        <p className={styles.albumText}>Lorem...</p>
+        <p className={styles.albumText}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
       </div>
     </div>
   );
@@ -94,11 +104,17 @@ const AddTemplate = () => {
         </div>
       </header>
       <div className={styles.body}>
-        <div className={styles.photograph}>
+        {/* <div className={styles.photograph}>
           <img src={bbom3} alt="" />
           <img src={ratcha} alt="" />
           <img src={mark} alt="" />
           <img src={bass} alt="" />
+        </div> */}
+        <div className={styles.banner}>
+          <img
+            src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+            alt=""
+          />
         </div>
         <div className={styles.tags}>
           <button
@@ -154,12 +170,48 @@ const AddTemplate = () => {
             Saving
             <FontAwesomeIcon icon={faSave} />
           </button>
+          <button type="button" className={styles.tagUnactive}>
+            Life and Health
+            <FontAwesomeIcon icon={faHeartCircleCheck} />
+          </button>
+          <button type="button" className={styles.tagUnactive}>
+            Annuity
+            <FontAwesomeIcon icon={faDesktop} />
+          </button>
+          <button type="button" className={styles.tagUnactive}>
+            Car Insurance and Act
+            <FontAwesomeIcon icon={faCar} />
+          </button>
         </div>
         <div className={styles.cards}>
-          <Card name={"Teerapat"} img={bbom} />
+          {/* <Card name={"Teerapat"} img={bbom} />
           <Card name={"Ratchaphong"} img={ratcha} />
           <Card name={"Tharin"} img={mark} />
-          <Card name={"Chaiwut"} img={bass} />
+          <Card name={"Chaiwut"} img={bass} /> */}
+          <Card
+            name={"Travel"}
+            img={
+              "https://images.unsplash.com/photo-1581091870598-36ce9bad5c77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            }
+          />
+          <Card
+            name={"Accident"}
+            img={
+              "https://images.unsplash.com/photo-1573496799822-b0557c9e2f41?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
+            }
+          />
+          <Card
+            name={"Health"}
+            img={
+              "https://images.unsplash.com/photo-1573165265437-f5e267bb3db6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
+            }
+          />
+          <Card
+            name={"Cancer"}
+            img={
+              "https://images.unsplash.com/photo-1562564055-71e051d33c19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            }
+          />
         </div>
         <div className={styles.alliance}>
           <div className={styles.title}>Alliance</div>
@@ -174,10 +226,11 @@ const AddTemplate = () => {
                     {index + 1} / {slideImages.length}
                   </div>
                   <img
-                    src={require(`../assets/images/${image}.jpg`)}
+                    // src={require(`../assets/images/${image}.jpg`)}
+                    src={image}
                     alt={image}
                   />
-                  <div className={styles.nameText}>{image}</div>
+                  {/* <div className={styles.nameText}>{image}</div> */}
                 </div>
               ))}
             </div>

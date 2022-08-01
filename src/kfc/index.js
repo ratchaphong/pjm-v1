@@ -101,7 +101,12 @@ const KfcTemplate = () => {
                   : styles.slides
               }
             >
-              <img src={bbom} alt="" />
+              <img
+                src={
+                  "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                }
+                alt=""
+              />
             </div>
             <div
               className={
@@ -110,7 +115,12 @@ const KfcTemplate = () => {
                   : styles.slides
               }
             >
-              <img src={ratcha} alt="" />
+              <img
+                src={
+                  "https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                }
+                alt=""
+              />
             </div>
             <div
               className={
@@ -119,7 +129,12 @@ const KfcTemplate = () => {
                   : styles.slides
               }
             >
-              <img src={tharin} alt="" />
+              <img
+                src={
+                  "https://images.unsplash.com/photo-1493934558415-9d19f0b2b4d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1154&q=80"
+                }
+                alt=""
+              />
             </div>
           </div>
         </div>

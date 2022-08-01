@@ -22,6 +22,10 @@ const Container = styled.section`
     border-radius: 4px;
     /* background-color: #f1f1f1; */
     background-color: #ffffff;
+    transition: all 0.5s ease-out;
+  }
+  .card:hover {
+    transform: scale(1.1);
   }
   .card .b {
     padding: 0 2rem 2rem;
@@ -78,9 +82,9 @@ const Suggestion = () => {
           {/* <div className="a">adsfafaf</div> */}
           <div className="b">
             <div className="discount">
-              ราคาเริ่มต้น <s>1,990 บาท</s>
+              ราคาเริ่มต้น <s>6,000 บาท</s>
               <br />
-              <span>1,490 บาท</span>
+              <span>3,990 บาท</span>
             </div>
             <h1>
               <span>Landing</span> Website
@@ -100,9 +104,9 @@ const Suggestion = () => {
           {/* <div className="a">adsfafaf</div> */}
           <div className="b">
             <div className="discount">
-              ราคาเริ่มต้น <s>31,990 บาท</s>
+              ราคาเริ่มต้น <s>30,000 บาท</s>
               <br />
-              <span>21,490 บาท</span>
+              <span>24,990 บาท</span>
             </div>
             <h1>
               <span>Informative</span> Website
@@ -119,9 +123,9 @@ const Suggestion = () => {
           {/* <div className="a">adsfafaf</div> */}
           <div className="b">
             <div className="discount">
-              ราคาเริ่มต้น <s>231,990 บาท</s>
+              ราคาเริ่มต้น <s>230,000 บาท</s>
               <br />
-              <span>121,490 บาท</span>
+              <span>219,990 บาท</span>
             </div>
             <h1>
               <span>E-commerce</span> Website

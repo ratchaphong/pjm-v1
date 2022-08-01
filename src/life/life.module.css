@@ -19,7 +19,7 @@
   align-items: center;
 }
 
-.header div {
+/* .header div {
   width: 100px;
 }
 
@@ -28,6 +28,21 @@
   object-fit: cover;
   image-rendering: pixelated;
   filter: invert(1);
+} */
+.header div h1 {
+}
+.header div small {
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.header div small span {
+  width: 20%;
+  height: 2px;
+  background-color: #333;
 }
 
 .body {
@@ -42,6 +57,7 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  color: #333;
 }
 
 .body .banner {

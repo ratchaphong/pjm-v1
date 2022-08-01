@@ -1,4 +1,5 @@
 import styles from "./gallery.module.css";
+import { useLocation } from "react-router-dom";
 import cx from "classnames";
 // import bbom from "../assets/images/bbom.jpg";
 import project1 from "../assets/images/1.JPG";
@@ -18,8 +19,7 @@ import website2 from "../assets/images/web2.jpg";
 import website3 from "../assets/images/web3.jpg";
 import website4 from "../assets/images/web4.jpg";
 import website5 from "../assets/images/web5.jpg";
-
-import { useLocation } from "react-router-dom";
+import website6 from "../assets/images/web6.jpg";
 
 const ImageBox = ({
   copyright,
@@ -58,33 +58,39 @@ const Gallery = () => {
           <>
             <ImageBox
               img={website1}
-              title="เว็บหน้าเดียว ค่ายแดง"
+              title="คลิกเพื่อดูตัวอย่าง"
               content="website"
               link={"/example/kfc"}
             />
             <ImageBox
               img={website2}
-              title="เว็บหลายหน้า ค่ายเขียว"
+              title="คลิกเพื่อดูตัวอย่าง"
               content="website"
               link={"/example/add"}
             />
             <ImageBox
               img={website3}
-              title="เว็บหลายหน้า ค่ายฟ้า"
+              title="คลิกเพื่อดูตัวอย่าง"
               content="website"
               link={"/example/agent"}
             />
             <ImageBox
-              img={website4}
-              title="ระบบหลังบ้าน"
-              content="website"
-              link={"/login"}
-            />
-            <ImageBox
               img={website5}
-              title="เว็บประกันชีวิต สีฟ้า"
+              title="คลิกเพื่อดูตัวอย่าง"
               content="website"
               link={"/example/life"}
+            />
+            <ImageBox
+              img={website6}
+              title="คลิกเพื่อดูตัวอย่าง"
+              content="website"
+              link={"/example/friday"}
+            />
+            <ImageBox
+              img={website4}
+              title="คลิกเพื่อดูตัวอย่าง (CMS)"
+              content="website"
+              link={"/login"}
             />
           </>
         )}
