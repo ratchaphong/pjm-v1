@@ -15,12 +15,6 @@ import {
   faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useRef, useState } from "react";
-import bbom from "../assets/images/bbom.jpg";
-import bbom3 from "../assets/images/bbom2.jpg";
-import ratcha from "../assets/images/rratcha.jpg";
-import mark from "../assets/images/ttharin.jpg";
-import bass from "../assets/images/bbas.jpg";
-import { faOldRepublic } from "@fortawesome/free-brands-svg-icons";
 
 // const slideImages = ["bbom2", "rratcha"];
 const slideImages = [

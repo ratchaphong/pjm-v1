@@ -1,5 +1,4 @@
 import styles from "./agent.module.css";
-import bbom from "../assets/images/bbom2.jpg";
 import bbom2 from "../assets/images/bbom.jpg";
 import ratcha from "../assets/images/rratcha.jpg";
 import tharin from "../assets/images/ttharin.jpg";
@@ -10,7 +9,6 @@ import {
   faChevronRight,
   faCog,
   faDollar,
-  faShield,
   faShieldAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";

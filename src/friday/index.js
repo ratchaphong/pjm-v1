@@ -6,18 +6,11 @@ import {
 import {
   faChevronUp,
   faEnvelope,
-  faEnvelopeOpen,
-  faListAlt,
-  faMapLocation,
-  faMapMarkedAlt,
-  faMapMarker,
   faMapMarkerAlt,
   faPhoneAlt,
-  faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./friday.module.css";
-import logo_review from "../assets/images/logo_review.png";
 import { Link } from "react-router-dom";
 
 const Cards = ({ title, img }) => {

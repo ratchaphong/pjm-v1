@@ -1,14 +1,8 @@
 import {
-  faFacebookF,
   faFacebookMessenger,
   faLine,
 } from "@fortawesome/free-brands-svg-icons";
-import {
-  faEnvelope,
-  faMapMarked,
-  faPaperPlane,
-  faPhone,
-} from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 

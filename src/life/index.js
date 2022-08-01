@@ -12,7 +12,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./life.module.css";
-import logo_review from "../assets/images/logo_review.png";
 import { Link } from "react-router-dom";
 
 const LifeTemplate = () => {

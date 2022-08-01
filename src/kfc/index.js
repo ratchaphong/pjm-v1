@@ -1,7 +1,5 @@
 import styles from "./kfc.module.css";
 import bbom from "../assets/images/bbom2.jpg";
-import ratcha from "../assets/images/rratcha.jpg";
-import tharin from "../assets/images/ttharin.jpg";
 
 import cx from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
