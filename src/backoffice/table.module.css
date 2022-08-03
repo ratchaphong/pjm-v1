@@ -1,0 +1,86 @@
+section.container {
+  overflow-x: auto;
+  margin-bottom: 10px;
+}
+table.table {
+  table-layout: fixed;
+  width: 100%;
+  border-spacing: 0;
+  border-radius: 10px;
+  border: 1px solid #ccdceb;
+}
+table.table thead tr {
+  height: 44px;
+}
+table.table tbody tr {
+  height: 60px;
+}
+table.table thead th {
+  background-color: #00529a;
+  color: #fff;
+  text-align: left;
+}
+table.table thead th,
+table.table tbody td {
+  margin: 0;
+  padding: 0.5rem;
+  border-right: 1px solid #b5b6bf;
+  font-weight: normal;
+}
+table.table thead th:last-child,
+table.table tbody td:last-child {
+  border-right: 0;
+}
+table.table tbody tr:nth-child(even) {
+  background-color: #eff1f5;
+}
+table.table thead th:first-child {
+  border-top-left-radius: 8px;
+}
+table.table thead th:last-child {
+  border-top-right-radius: 8px;
+}
+table.table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
+}
+table.table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+section.pagination {
+  display: flex;
+  justify-content: flex-end;
+}
+section.pagination span.input_wrapper {
+  margin-right: 7px;
+}
+section.pagination button.btn_pagination {
+  margin-left: 3px;
+}
+section.pagination button {
+  width: initial;
+  height: 48px;
+  padding: 0 24px;
+  color: #fff;
+  background-color: #00529a;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+section.pagination button:disabled {
+  color: #b5b6bf;
+  background-color: #d8d9e0;
+  cursor: not-allowed;
+}
+section.pagination input[type="number"] {
+  height: 48px;
+  width: 42px;
+  margin: 0 10px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #a0a8bc;
+}
+section.pagination input::-webkit-outer-spin-button,
+section.pagination input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
