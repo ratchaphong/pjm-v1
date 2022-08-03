@@ -16,6 +16,7 @@ import Register from "../register";
 import Login from "../login";
 import LifeTemplate from "../life";
 import FridayTemplate from "../friday";
+import BackofficeTemplate from "../backoffice";
 
 function Pages() {
   const currentUser = useSelector((state) => state.auth.currentUser);
@@ -46,7 +47,7 @@ function Pages() {
           <Route path="add" element={<AddTemplate />} />
           <Route path="kfc" element={<KfcTemplate />} />
           <Route path="agent" element={<AgentTemplate />} />
-          {/* <Route path="backoffice" element={<BackofficeTemplate />} /> */}
+          <Route path="backoffice" element={<BackofficeTemplate />} />
           <Route path="friday" element={<FridayTemplate />} />
         </Route>
         <Route path="*" element={<Navigate to="/notfound" replace />} />

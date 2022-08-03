@@ -8964,6 +8964,11 @@ react-scroll@^1.8.7:
     lodash.throttle "^4.1.1"
     prop-types "^15.7.2"
 
+react-table@^7.8.0:
+  version "7.8.0"
+  resolved "https://registry.yarnpkg.com/react-table/-/react-table-7.8.0.tgz#07858c01c1718c09f7f1aed7034fcfd7bda907d2"
+  integrity sha512-hNaz4ygkZO4bESeFfnfOft73iBUj8K5oKi1EcSHPAibEydfsX2MyU6Z8KCr3mv3C9Kqqh71U+DhZkFvibbnPbA==
+
 react-thailand-address-autocomplete@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/react-thailand-address-autocomplete/-/react-thailand-address-autocomplete-0.0.6.tgz#ca4d2f962be4e2ad0d58cab55e9ef0b9e6bd1571"

@@ -139,6 +139,39 @@ const Suggestion = () => {
             </ul>
           </div>
         </div>
+        <div className="card">
+          <div className="b">
+            <h1>
+              <span>Mobile</span> Application
+            </h1>
+            <ul>
+              <li>ออกแบบและพัฒนาแอพฯทุกความต้องการของลูกค้า</li>
+              <li>รองรับทั้งระบบ iOS และ Android</li>
+              <li>
+                ส่งข้อความสั้น Notification Message แจ้งข่าวสาร หรือโปรโมชันต่าง
+                ๆ
+              </li>
+              <li>
+                ระบบการจัดการสมาชิก, ระบบการจัดการคลังสินค้า
+                และระบบชำระเงินผ่านบัตรเครดิต
+              </li>
+              <li>คู่มือการใช้งาน</li>
+            </ul>
+          </div>
+        </div>
+        <div className="card">
+          <div className="b">
+            <h1>
+              <span>Microcontroller</span> Arduino ESP8266
+            </h1>
+            <ul>
+              <li>ออกแบบพัฒนาระบบตามความต้องการใช้งานของลูกค้า</li>
+              <li>ระบบรู้จำใบหน้า, ระบบประมวลผลด้วย Image Processing</li>
+              <li>ระบบจัดเก็บข้อมูลและแจ้งเตือน, Line Notify, MQTT</li>
+              <li>คู่มือการใช้งาน</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </Container>
   );

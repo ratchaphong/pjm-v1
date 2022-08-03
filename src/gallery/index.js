@@ -20,6 +20,7 @@ import website3 from "../assets/images/web3.jpg";
 import website4 from "../assets/images/web4.jpg";
 import website5 from "../assets/images/web5.jpg";
 import website6 from "../assets/images/web6.jpg";
+import website7 from "../assets/images/web7.jpg";
 
 const ImageBox = ({
   copyright,
@@ -85,6 +86,12 @@ const Gallery = () => {
               title="คลิกเพื่อดูตัวอย่าง"
               content="website"
               link={"/example/friday"}
+            />
+            <ImageBox
+              img={website7}
+              title="คลิกเพื่อดูตัวอย่าง"
+              content="website"
+              link={"/example/backoffice"}
             />
             <ImageBox
               img={website4}

@@ -29,8 +29,7 @@
   image-rendering: pixelated;
   filter: invert(1);
 } */
-.header div h1 {
-}
+
 .header div small {
   color: #333;
   display: flex;
