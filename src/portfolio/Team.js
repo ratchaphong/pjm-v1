@@ -13,6 +13,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { Link as LinkScroll } from "react-scroll";
 
 const Container = styled.section`
   font-family: "Kanit", sans-serif;
@@ -75,6 +76,7 @@ const Container = styled.section`
     padding: 4px;
     background: unset;
     transition: all 0.4s ease;
+    cursor: pointer;
   }
   .container .cards .card:hover .img {
     background: #f6c90e;
@@ -383,19 +385,21 @@ const Card = ({
   img,
   name,
   job,
-  fa = "#",
-  tw = "#",
-  ins = "#",
-  yu = "#",
+  fa = "/",
+  tw = "/",
+  ins = "/",
+  yu = "/",
   setSeletctedItem = () => {},
 }) => {
   return (
     <div className="card">
       <div className="overlay"></div>
       <div className="content">
-        <div className="img" onClick={() => setSeletctedItem(index)}>
-          <img src={img} alt="" />
-        </div>
+        <LinkScroll to="member" smooth={true} offset={-64}>
+          <div className="img" onClick={() => setSeletctedItem(index)}>
+            <img src={img} alt="" />
+          </div>
+        </LinkScroll>
         <div className="details">
           <div className="name">{name}</div>
           <div className="job">{job}</div>
@@ -434,10 +438,10 @@ const Team = () => {
               img={bbom2}
               name="ธีรภัทร์ น้ำเพชร"
               job="Team Lead"
-              fa="#"
-              tw="#"
-              ins="#"
-              yu="#"
+              fa="/comingsoon"
+              tw="/comingsoon"
+              ins="/comingsoon"
+              yu="/comingsoon"
               setSeletctedItem={setSeletctedItem}
             />
             <Card
@@ -449,10 +453,10 @@ const Team = () => {
                 </>
               }
               job="Web Developer"
-              fa="#"
-              tw="#"
-              ins="#"
-              yu="#"
+              fa="/comingsoon"
+              tw="/comingsoon"
+              ins="/comingsoon"
+              yu="/comingsoon"
               setSeletctedItem={setSeletctedItem}
             />
             <Card
@@ -460,10 +464,10 @@ const Team = () => {
               img={mmark}
               name="ธารินทร์ ภู่พูลเพียน"
               job="Mobile Developer"
-              fa="#"
-              tw="#"
-              ins="#"
-              yu="#"
+              fa="/comingsoon"
+              tw="/comingsoon"
+              ins="/comingsoon"
+              yu="/comingsoon"
               setSeletctedItem={setSeletctedItem}
             />
           </div>
@@ -473,10 +477,10 @@ const Team = () => {
               img={bbas}
               name="ชัยวุฒิ กตัญวิญญู"
               job="System Analytics"
-              fa="#"
-              tw="#"
-              ins="#"
-              yu="#"
+              fa="/comingsoon"
+              tw="/comingsoon"
+              ins="/comingsoon"
+              yu="/comingsoon"
               setSeletctedItem={setSeletctedItem}
             />
             <Card
@@ -484,10 +488,10 @@ const Team = () => {
               img={mumm}
               name="ภัทรพล อ่องมี"
               job="Project Manager"
-              fa="#"
-              tw="#"
-              ins="#"
-              yu="#"
+              fa="/comingsoon"
+              tw="/comingsoon"
+              ins="/comingsoon"
+              yu="/comingsoon"
               setSeletctedItem={setSeletctedItem}
             />
           </div>
@@ -497,7 +501,7 @@ const Team = () => {
           <label htmlFor="two" className="two"></label>
         </div>
       </div>
-      <InterviewContainer>
+      <InterviewContainer id="member">
         <div className="label">
           <h2 className="header">
             ทำความรู้จักกับ PROJECTMAN

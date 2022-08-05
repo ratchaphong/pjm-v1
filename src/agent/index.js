@@ -90,7 +90,7 @@ const AgentTemplate = () => {
             alt=""
           />
           <div className={styles.bannerText}>
-            Hipster : Agent 47
+            PROJECTMAN : Hipster
             <Link to="/">
               <button type="button">welcome</button>
             </Link>
@@ -99,13 +99,9 @@ const AgentTemplate = () => {
         <div className={styles.content}>
           <h2>Privilege</h2>
           <div className={styles.privilege}>
-            <Item
-              title="Mauris vestibulum diam quis ex aliquet."
-              icon={faShieldAlt}
-              button
-            />
-            <Item title="Vestibulum sit amet ante turpis." icon={faCog} />
-            <Item title="Cras vestibulum mauris felis." icon={faDollar} />
+            <Item title="Mauris vestibulum" icon={faShieldAlt} button />
+            <Item title="Vestibulum sit amet" icon={faCog} />
+            <Item title="Cras vestibulum" icon={faDollar} />
           </div>
           <div className={styles.privilegeImage}>
             <img

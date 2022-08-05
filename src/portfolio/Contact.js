@@ -154,7 +154,10 @@ const Banner = () => {
               <div className="icon">
                 <FontAwesomeIcon icon={faLine} />
               </div>
-              <label>@604rnpk</label>
+              <a href="https://lin.ee/TI17geV" target="_blank" rel="noreferrer">
+                projectman-dev.official
+                {/* @604rnpk */}
+              </a>
             </div>
             <div className="phone">
               <div className="icon">
