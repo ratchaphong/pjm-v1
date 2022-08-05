@@ -14,7 +14,7 @@ const Container = styled.section`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 2rem;
+    gap: 3rem;
   }
   .card {
     width: 30%;
@@ -79,7 +79,7 @@ const Suggestion = () => {
     <Container id="suggestion">
       <div className="padding">
         <div className="card">
-          {/* <div className="a">adsfafaf</div> */}
+          {/* <div className="image">image</div> */}
           <div className="b">
             <div className="discount">
               ราคาเริ่มต้น <s>6,000 บาท</s>
@@ -91,17 +91,12 @@ const Suggestion = () => {
             </h1>
             <ul>
               <li>รองรับการแสดงผลทุกอุปกรณ์แบบ Responsive</li>
-              <li>
-                ไม่ต้องมีทักษะพื้นฐานความรู้ใด ๆ ก็สามารถปรับแต่งทั้งหมดง่าย ๆ
-                ด้วยตัวเอง
-              </li>
-              <li>ไม่ต้องพัฒนาระบบเอง เรามีให้ครบ</li>
               <li>รองรับการทำ SEO และการตลาดออนไลน์</li>
             </ul>
           </div>
         </div>
         <div className="card">
-          {/* <div className="a">adsfafaf</div> */}
+          {/* <div className="image">image</div> */}
           <div className="b">
             <div className="discount">
               ราคาเริ่มต้น <s>30,000 บาท</s>
@@ -120,7 +115,7 @@ const Suggestion = () => {
           </div>
         </div>
         <div className="card">
-          {/* <div className="a">adsfafaf</div> */}
+          {/* <div className="image">image</div> */}
           <div className="b">
             <div className="discount">
               ราคาเริ่มต้น <s>230,000 บาท</s>
@@ -145,14 +140,16 @@ const Suggestion = () => {
               <span>Mobile</span> Application
             </h1>
             <ul>
-              <li>ออกแบบและพัฒนาแอพฯทุกความต้องการของลูกค้า</li>
               <li>รองรับทั้งระบบ iOS และ Android</li>
               <li>
-                ส่งข้อความสั้น Notification Message แจ้งข่าวสาร หรือโปรโมชันต่าง
-                ๆ
+                Notification Message ส่งข้อความสั้น แจ้งข่าวสารหรือโปรโมชั่น
               </li>
               <li>
-                ระบบการจัดการสมาชิก, ระบบการจัดการคลังสินค้า
+                ระบบจองห้องพัก, ระบบจองคิวออนไลน์ (QR Code)
+                และระบบสั่งจองหรือขนส่งออนไลน์ (Delivery)
+              </li>
+              <li>
+                ระบบร้านค้าออนไลน์, ระบบจัดการคลังสินค้า
                 และระบบชำระเงินผ่านบัตรเครดิต
               </li>
               <li>คู่มือการใช้งาน</li>
@@ -166,7 +163,6 @@ const Suggestion = () => {
             </h1>
             <ul>
               <li>ออกแบบพัฒนาระบบตามความต้องการใช้งานของลูกค้า</li>
-              <li>ระบบรู้จำใบหน้า, ระบบประมวลผลด้วย Image Processing</li>
               <li>ระบบจัดเก็บข้อมูลและแจ้งเตือน, Line Notify, MQTT</li>
               <li>คู่มือการใช้งาน</li>
             </ul>

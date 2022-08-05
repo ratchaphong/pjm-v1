@@ -58,12 +58,6 @@ const Gallery = () => {
         {catalogue === "website" && (
           <>
             <ImageBox
-              img={website1}
-              title="คลิกเพื่อดูตัวอย่าง"
-              content="website"
-              link={"/example/kfc"}
-            />
-            <ImageBox
               img={website2}
               title="คลิกเพื่อดูตัวอย่าง"
               content="website"
@@ -98,6 +92,12 @@ const Gallery = () => {
               title="คลิกเพื่อดูตัวอย่าง (CMS)"
               content="website"
               link={"/login"}
+            />
+            <ImageBox
+              img={website1}
+              title="คลิกเพื่อดูตัวอย่าง"
+              content="website"
+              link={"/example/kfc"}
             />
           </>
         )}
