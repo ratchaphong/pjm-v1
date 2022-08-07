@@ -246,7 +246,7 @@ const BackOffice = (props) => {
               <small className={styles.textMuted}>Admin</small>
             </div>
             <div className={styles.profilePhoto}>
-              <img src={bbom} alt="" />
+              <img src={user?.img || bbom} alt="" />
             </div>
           </div>
         </div>

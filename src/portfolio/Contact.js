@@ -95,6 +95,9 @@ const Container = styled.section`
       color: #ccc;
       letter-spacing: 3px;
     }
+    input:disabled {
+      cursor: not-allowed;
+    }
     button {
       font-weight: bold;
       border: none;
@@ -181,9 +184,9 @@ const Banner = () => {
             </div>
           </div>
           <div className="contact-form">
-            <input placeholder="Name" />
-            <input placeholder="Email" />
-            <input placeholder="Message" />
+            <input placeholder="Name" disabled />
+            <input placeholder="Email" disabled />
+            <input placeholder="Message" disabled />
             <button type="button" disabled>
               <FontAwesomeIcon icon={faPaperPlane} />
               <label>Send Message</label>

@@ -30,6 +30,26 @@ main .setting .detail > div p {
   width: 100%;
 } */
 
+main .setting .form .file {
+  width: 48%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+main .setting .form .file .image {
+  width: 64px;
+  height: 64px;
+}
+
+main .setting .form .file .image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 main .setting .form > div {
   width: 48%;
   display: flex;
@@ -41,7 +61,7 @@ main .setting .form > div h4 {
   text-transform: capitalize;
 }
 
-main .setting .form > div input {
+main .setting .form > div input:not([type="file"]) {
   width: 100%;
   height: 1.8rem;
   padding: 0 0.5rem;
