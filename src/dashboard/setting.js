@@ -1,6 +1,7 @@
 import styles from "./setting.module.css";
 import { Formik, useField, Form } from "formik";
 import validation from "./setting.validation";
+import bbom from "../assets/images/bbom.jpg";
 
 const InputComponent = ({ title, name, type, placeholder, onChange }) => {
   const [field, meta, helpers] = useField(name);
@@ -57,13 +58,34 @@ const Setting = ({ data, onSubmitSetting }) => {
       <h2>Edit</h2>
       <Formik
         enableReinitialize
-        initialValues={data}
+        initialValues={{ ...data, file: "" }}
         validationSchema={validation}
         onSubmit={onSubmitSetting}
       >
         {(formikProps) => {
           return (
             <Form className={styles.form}>
+              <div className={styles.file}>
+                <div className={styles.image}>
+                  <img
+                    src={
+                      formikProps?.values?.file
+                        ? URL.createObjectURL(formikProps.values.file)
+                        : formikProps?.values?.img
+                        ? formikProps?.values?.img
+                        : bbom
+                    }
+                    alt=""
+                  />
+                </div>
+                <input
+                  type="file"
+                  id="file"
+                  onChange={(e) =>
+                    formikProps.setFieldValue("file", e.target.files[0])
+                  }
+                />
+              </div>
               <InputComponent
                 title="First Name"
                 name="firstName"
